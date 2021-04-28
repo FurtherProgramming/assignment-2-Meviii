@@ -5,14 +5,14 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.event.ActionEvent;
-import main.model.LoginModel;
+import main.model.AdminLoginModel;
 
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
-public class LoginController implements Initializable {
-    public LoginModel loginModel = new LoginModel();
+public class AdminLoginController implements Initializable {
+    public AdminLoginModel alm = new AdminLoginModel();
     @FXML
     private Label isConnected;
     @FXML
@@ -24,7 +24,7 @@ public class LoginController implements Initializable {
     // Check database connection
     @Override
     public void initialize(URL location, ResourceBundle resources){
-        if (loginModel.isDbConnected()){
+        if (alm.isDbConnected()){
             isConnected.setText("Connected");
         }else{
             isConnected.setText("Not Connected");
@@ -37,7 +37,7 @@ public class LoginController implements Initializable {
     public void Login(ActionEvent event){
 
         try {
-            if (loginModel.isLogin(txtUsername.getText(),txtPassword.getText())){
+            if (alm.isLogin(txtUsername.getText(),txtPassword.getText())){
 
                 isConnected.setText("Logged in successfully");
             }else{
@@ -47,12 +47,5 @@ public class LoginController implements Initializable {
             e.printStackTrace();
         }
     }
-
-
-
-
-    //11.2.3 big sur
-
-
 
 }
