@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="394.0" prefWidth="360.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.controller.AdminLoginController">
+    <children>
+        <Label fx:id="isConnected" layoutX="23.0" layoutY="356.0" text="Status">
+
+        </Label>
+        <TextField fx:id="txtUsername" layoutX="108.0" layoutY="198.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="138.0" promptText="USERNAME" AnchorPane.bottomAnchor="171.0" AnchorPane.leftAnchor="108.0" AnchorPane.rightAnchor="114.0" AnchorPane.topAnchor="198.0" />
+        <PasswordField fx:id="txtPassword" layoutX="108.0" layoutY="235.0" prefHeight="25.0" prefWidth="138.0" promptText="PASSWORD" AnchorPane.bottomAnchor="134.0" AnchorPane.leftAnchor="108.0" AnchorPane.rightAnchor="114.0" AnchorPane.topAnchor="235.0" />
+        <Button defaultButton="true" layoutX="147.0" layoutY="275.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#Login" prefHeight="25.0" prefWidth="60.0" text="Login" textAlignment="CENTER" AnchorPane.bottomAnchor="94.0" AnchorPane.leftAnchor="147.0" AnchorPane.rightAnchor="153.0" AnchorPane.topAnchor="275.0" />
+        <Label layoutX="104.0" layoutY="52.0" prefHeight="150.0" prefWidth="189.0" text="ARUB ADMIN&#10;PANEL" textAlignment="CENTER" textOverrun="CLIP">
+            <font>
+                <Font name="System Bold" size="22.0" />
+            </font>
+        </Label>
+        <Button layoutX="315.0" layoutY="4.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" text="Back" />
+
+
+    </children>
+
+</AnchorPane>

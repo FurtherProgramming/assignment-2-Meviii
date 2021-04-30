@@ -57,4 +57,31 @@ public class LoginModel {
 
     }
 
+    public Boolean isRegister(String user, String pass, String name, String surname, int age) throws SQLException{
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet=null;
+        String query = "insert into employee(user = ?, pass = ?, name = ?, surname = ?, age = ?)";
+        try {
+            preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setString(1, user);
+            preparedStatement.setString(2, pass);
+            preparedStatement.setString(3, name);
+            preparedStatement.setString(4, surname);
+            preparedStatement.setInt(5, age);
+
+            resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()){
+                return true;
+            }else{
+                return false;
+            }
+        }
+        catch (Exception e){
+            return false;
+        }finally{
+            preparedStatement.close();
+            resultSet.close();
+        }
+    }
+
 }
