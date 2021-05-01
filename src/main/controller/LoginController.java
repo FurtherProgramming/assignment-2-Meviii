@@ -11,11 +11,16 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.event.ActionEvent;
 import javafx.stage.Stage;
+import javafx.stage.Window;
 import main.model.LoginModel;
 
+import javax.xml.soap.Text;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.URL;
 import java.sql.SQLException;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class LoginController implements Initializable {
@@ -26,6 +31,8 @@ public class LoginController implements Initializable {
     private TextField txtUsername;
     @FXML
     private TextField txtPassword;
+    @FXML
+    private Button btnAdminPanel;
 
 
     // Check database connection
@@ -57,7 +64,23 @@ public class LoginController implements Initializable {
 
     public void ChangeToAdminPanel(ActionEvent event) throws IOException {
 
-        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("ui/adminLogin.fxml"));
+        FXMLLoader loader = new FXMLLoader();
+        String address = "src/main/ui/adminLogin.fxml";
+        InputStream fxmlStream = new FileInputStream(address);
+        Parent root = loader.load(fxmlStream);
+
+
+        Stage stage = (Stage) btnAdminPanel.getScene().getWindow();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+
+
+
+
+        //=========================================================================================================
+
+        //btnAdminPanel
+        /*Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("ui/adminLogin.fxml")));
         Scene scene = new Scene(root);
 
         //Getting stage information
@@ -66,14 +89,31 @@ public class LoginController implements Initializable {
         window.setScene(scene);
         window.show();
 
-        /*Stage s = new Stage();
+        Stage s = new Stage();
         s.setScene(FXMLLoader.load(getClass().getResource("ui/adminLogin.fxml")));
         s.show();*/
-    }
 
+        //=========================================================================================================
+
+        /*FXMLLoader loader = new FXMLLoader();
+        loader.load().getClass().getClassLoader().getResource(FXMLLoader.load((getClass().getClassLoader().getResource("../ui/adminLogin.fxml"))));
+        Stage stage = (Stage) btnAdminPanel.getScene().getWindow();
+        Scene scene = new Scene(loader.getRoot());
+        stage.setScene(scene);*/
+    }
+    @FXML
+    private TextField txtRegUser;
+    @FXML
+    private TextField txtRegPass;
+    @FXML
+    private TextField txtRegName;
+    @FXML
+    private TextField txtRegSurname;
+    @FXML
+    private TextField txtRegAge;
     public void RegisterButtonPushed(ActionEvent event) {
         //Should open new form
-        //isRegister Completed. Need to implement into this method.
+        //isRegister Completed. Need to implement.
 
     }
 
