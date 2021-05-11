@@ -1,4 +1,5 @@
 package main.model;
 
-public class EmployeePanelModel {
+public class EmployeePanelModel{
+
 }

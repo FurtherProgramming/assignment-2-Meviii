@@ -33,7 +33,8 @@ public class LoginController implements Initializable {
     private TextField txtPassword;
     @FXML
     private Button btnAdminPanel;
-
+    @FXML
+    private Button mainLogin;
 
     // Check database connection
     @Override
@@ -48,12 +49,21 @@ public class LoginController implements Initializable {
     /* login Action method
        check if user input is the same as database.
      */
-    public void Login(ActionEvent event){
+
+    public void Login(ActionEvent event) throws IOException {
 
         try {
             if (loginModel.isLogin(txtUsername.getText(),txtPassword.getText())){
 
-                isConnected.setText("Logged in successfully");
+                FXMLLoader loader = new FXMLLoader();
+                String address = "src/main/ui/employeePanel.fxml";
+                InputStream fxmlStream = new FileInputStream(address);
+                Parent root = loader.load(fxmlStream);
+
+                Stage stage = (Stage) mainLogin.getScene().getWindow();
+                Scene scene = new Scene(root);
+                stage.setScene(scene);
+
             }else{
                 isConnected.setText("Incorrect Login");
             }
@@ -69,51 +79,21 @@ public class LoginController implements Initializable {
         InputStream fxmlStream = new FileInputStream(address);
         Parent root = loader.load(fxmlStream);
 
-
         Stage stage = (Stage) btnAdminPanel.getScene().getWindow();
         Scene scene = new Scene(root);
         stage.setScene(scene);
 
-
-
-
-        //=========================================================================================================
-
-        //btnAdminPanel
-        /*Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("ui/adminLogin.fxml")));
-        Scene scene = new Scene(root);
-
-        //Getting stage information
-        Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
-
-        window.setScene(scene);
-        window.show();
-
-        Stage s = new Stage();
-        s.setScene(FXMLLoader.load(getClass().getResource("ui/adminLogin.fxml")));
-        s.show();*/
-
-        //=========================================================================================================
-
-        /*FXMLLoader loader = new FXMLLoader();
-        loader.load().getClass().getClassLoader().getResource(FXMLLoader.load((getClass().getClassLoader().getResource("../ui/adminLogin.fxml"))));
-        Stage stage = (Stage) btnAdminPanel.getScene().getWindow();
-        Scene scene = new Scene(loader.getRoot());
-        stage.setScene(scene);*/
     }
-    @FXML
-    private TextField txtRegUser;
-    @FXML
-    private TextField txtRegPass;
-    @FXML
-    private TextField txtRegName;
-    @FXML
-    private TextField txtRegSurname;
-    @FXML
-    private TextField txtRegAge;
-    public void RegisterButtonPushed(ActionEvent event) {
-        //Should open new form
-        //isRegister Completed. Need to implement.
+
+    public void RegisterButtonPushed(ActionEvent event) throws IOException{
+        FXMLLoader loader = new FXMLLoader();
+        String address = "src/main/ui/employeeRegister.fxml";
+        InputStream fxmlStream = new FileInputStream(address);
+        Parent root = loader.load(fxmlStream);
+
+        Stage stage = (Stage) btnAdminPanel.getScene().getWindow();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
 
     }
 

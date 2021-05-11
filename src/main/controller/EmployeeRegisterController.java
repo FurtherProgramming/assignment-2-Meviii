@@ -1,5 +1,6 @@
 package main.controller;
 
+import com.sun.org.apache.xpath.internal.operations.Bool;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -46,18 +47,28 @@ public class EmployeeRegisterController implements Initializable {
     @FXML
     private TextField txtRegAge;
     @FXML
-    private TextField txtRegUser;
+    private TextField txtRegUsername;
     @FXML
-    private TextField txtRegPass;
+    private TextField txtRegPassword;
     @FXML
     private TextField txtRegRepPass;
     public void Register(ActionEvent event) throws SQLException {
         try {
-            erc.isRegister(txtRegUser.getText(), txtRegPass.getText(), txtRegName.getText(), txtRegSurname.getText(), txtRegAge.getText());
-        /*if (erc.isRegister(txtRegUser.getText(), txtRegPass.getText(), txtRegName.getText(), txtRegSurname.getText(), txtRegAge.getText())) {
+            Boolean regNameIsEmpty = txtRegName.getText().isEmpty();
+            Boolean regSurnameIsEmpty = txtRegSurname.getText().isEmpty();
+            Boolean regAgeIsEmpty = txtRegAge.getText().isEmpty();
+            Boolean regUsernameIsEmpty = txtRegUsername.getText().isEmpty();
+            Boolean regPasswordIsEmpty = txtRegPassword.getText().isEmpty();
 
-
-            }*/
+            if(txtRegPassword.getText().equals(txtRegRepPass)) {
+                if (!regNameIsEmpty && !regSurnameIsEmpty && !regAgeIsEmpty && !regUsernameIsEmpty && !regPasswordIsEmpty) {
+                    erc.isRegister(txtRegName.getText(), txtRegSurname.getText(), txtRegAge.getText(), txtRegUsername.getText(), txtRegPassword.getText());
+                } else if (regNameIsEmpty && regSurnameIsEmpty && regAgeIsEmpty && regUsernameIsEmpty && regPasswordIsEmpty) {
+                    System.out.println("All fields need to be filled in");
+                }
+            }else{
+                System.out.println("Password field are not the same.");
+            }
         }catch(SQLException e){
             e.printStackTrace();
         }
