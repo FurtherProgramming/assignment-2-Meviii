@@ -4,21 +4,22 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="394.0" prefWidth="360.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.controller.LoginController">
+<AnchorPane prefHeight="372.0" prefWidth="347.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.controller.LoginController">
     <children>
             <Label fx:id="isConnected" layoutX="23.0" layoutY="356.0" text="Status">
 
             </Label>
-      <TextField fx:id="txtUsername" layoutX="108.0" layoutY="207.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="138.0" promptText="USERNAME" AnchorPane.bottomAnchor="171.0" AnchorPane.leftAnchor="108.0" AnchorPane.rightAnchor="114.0" AnchorPane.topAnchor="207.0" />
-      <PasswordField fx:id="txtPassword" layoutX="108.0" layoutY="244.0" prefHeight="25.0" prefWidth="138.0" promptText="PASSWORD" AnchorPane.bottomAnchor="134.0" AnchorPane.leftAnchor="108.0" AnchorPane.rightAnchor="114.0" AnchorPane.topAnchor="244.0" />
-      <Button fx:id="mainLogin" defaultButton="true" layoutX="185.0" layoutY="285.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#Login" prefHeight="25.0" prefWidth="60.0" text="Login" textAlignment="CENTER" AnchorPane.bottomAnchor="93.0" AnchorPane.leftAnchor="185.0" AnchorPane.rightAnchor="115.0" AnchorPane.topAnchor="285.0" />
-      <Label layoutX="83.0" layoutY="49.0" prefHeight="150.0" prefWidth="189.0" text="ARUB EMPLOYEE &#10;PANEL" textAlignment="CENTER" textOverrun="CLIP">
+      <TextField fx:id="txtUsername" layoutX="111.0" layoutY="202.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="138.0" promptText="USERNAME" AnchorPane.bottomAnchor="176.0" AnchorPane.leftAnchor="111.0" AnchorPane.rightAnchor="111.0" AnchorPane.topAnchor="202.0" />
+      <PasswordField fx:id="txtPassword" layoutX="111.0" layoutY="245.0" prefHeight="25.0" prefWidth="138.0" promptText="PASSWORD" AnchorPane.bottomAnchor="133.0" AnchorPane.leftAnchor="111.0" AnchorPane.rightAnchor="111.0" AnchorPane.topAnchor="245.0" />
+      <Button fx:id="mainLogin" defaultButton="true" layoutX="186.0" layoutY="284.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#Login" prefHeight="25.0" prefWidth="60.0" text="Login" textAlignment="CENTER" AnchorPane.bottomAnchor="94.0" AnchorPane.leftAnchor="186.0" AnchorPane.rightAnchor="114.0" AnchorPane.topAnchor="284.0" />
+      <Label layoutX="92.0" layoutY="52.0" prefHeight="150.0" prefWidth="189.0" text="ARUB EMPLOYEE &#10;PANEL" textAlignment="CENTER" textOverrun="CLIP">
          <font>
             <Font name="System Bold" size="22.0" />
          </font>
       </Label>
       <Button layoutX="108.0" layoutY="284.0" mnemonicParsing="false" onAction="#RegisterButtonPushed" text="Register" />
       <Button fx:id="btnAdminPanel" layoutX="2.0" layoutY="2.0" mnemonicParsing="false" onAction="#ChangeToAdminPanel" text="Admin Login" />
+      <Button layoutX="235.0" layoutY="358.0" mnemonicParsing="false" onAction="#ForgotPassword" text="Forgot Password?" />
 
 
     </children>

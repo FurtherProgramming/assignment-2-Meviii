@@ -85,6 +85,19 @@ public class LoginController implements Initializable {
 
     }
 
+    public void ForgotPassword(ActionEvent event) throws IOException {
+
+        FXMLLoader loader = new FXMLLoader();
+        String address = "src/main/ui/forgotPassword.fxml";
+        InputStream fxmlStream = new FileInputStream(address);
+        Parent root = loader.load(fxmlStream);
+
+        Stage stage = (Stage) btnAdminPanel.getScene().getWindow();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+
+    }
+
     public void RegisterButtonPushed(ActionEvent event) throws IOException{
         FXMLLoader loader = new FXMLLoader();
         String address = "src/main/ui/employeeRegister.fxml";

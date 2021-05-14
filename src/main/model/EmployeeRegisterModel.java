@@ -57,9 +57,9 @@ public class EmployeeRegisterModel {
         }
     }*/
 
-    public void isRegister(String name, String surname, String age, String username, String password) throws SQLException {
+    public void isRegister(String name, String surname, String age, String username, String password, String secret_question, String secret_answer) throws SQLException {
 
-            String query = "INSERT INTO employee(name , surname, age, username, password) VALUES (?,?,?,?,?)";
+            String query = "INSERT INTO employee(name , surname, age, username, password, secret_question, secret_answer) VALUES (?,?,?,?,?,?,?)";
             PreparedStatement preparedStatement = null;
         try {
             preparedStatement = connection.prepareStatement(query);
@@ -68,6 +68,8 @@ public class EmployeeRegisterModel {
             preparedStatement.setString(3, age);
             preparedStatement.setString(4, username);
             preparedStatement.setString(5, password);
+            preparedStatement.setString(6, secret_question);
+            preparedStatement.setString(7, secret_answer);
             preparedStatement.executeUpdate();
 
         }catch(Exception e){

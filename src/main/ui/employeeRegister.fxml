@@ -15,10 +15,11 @@
       <TextField fx:id="txtRegName" layoutX="42.0" layoutY="167.0" prefHeight="32.0" prefWidth="132.0" promptText="NAME" />
       <TextField fx:id="txtRegSurname" layoutX="189.0" layoutY="167.0" prefHeight="32.0" prefWidth="132.0" promptText="SURNAME" />
       <TextField fx:id="txtRegUsername" layoutX="42.0" layoutY="210.0" prefHeight="32.0" prefWidth="132.0" promptText="USERNAME" />
-      <PasswordField fx:id="txtRegRepPass" layoutX="189.0" layoutY="256.0" prefHeight="32.0" prefWidth="132.0" promptText="REPEAT PASSWORD" />
       <PasswordField fx:id="txtRegPassword" layoutX="189.0" layoutY="210.0" prefHeight="32.0" prefWidth="132.0" promptText="PASSWORD" />
-      <TextField fx:id="txtRegAge" layoutX="42.0" layoutY="256.0" prefHeight="32.0" prefWidth="132.0" promptText="AGE" />
-      <Button layoutX="246.0" layoutY="305.0" mnemonicParsing="false" onAction="#Register" text="Register" />
+      <TextField fx:id="txtRegAge" layoutX="189.0" layoutY="256.0" prefHeight="32.0" prefWidth="132.0" promptText="AGE" />
+      <Button layoutX="254.0" layoutY="333.0" mnemonicParsing="false" onAction="#Register" text="Register" />
+      <TextField fx:id="txtRegSecretQuestion" layoutX="42.0" layoutY="256.0" prefHeight="32.0" prefWidth="132.0" promptText="SECRET QUESTION?" />
+      <TextField fx:id="txtRegSecretAnswer" layoutX="42.0" layoutY="302.0" prefHeight="32.0" prefWidth="132.0" promptText="SECRET ANSWER" />
     </children>
 
 </AnchorPane>

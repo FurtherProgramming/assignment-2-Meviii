@@ -51,7 +51,9 @@ public class EmployeeRegisterController implements Initializable {
     @FXML
     private TextField txtRegPassword;
     @FXML
-    private TextField txtRegRepPass;
+    private TextField txtRegSecretQuestion;
+    @FXML
+    private TextField txtRegSecretAnswer;
     public void Register(ActionEvent event) throws SQLException {
         try {
             Boolean regNameIsEmpty = txtRegName.getText().isEmpty();
@@ -59,15 +61,14 @@ public class EmployeeRegisterController implements Initializable {
             Boolean regAgeIsEmpty = txtRegAge.getText().isEmpty();
             Boolean regUsernameIsEmpty = txtRegUsername.getText().isEmpty();
             Boolean regPasswordIsEmpty = txtRegPassword.getText().isEmpty();
+            Boolean regSecretQuestionIsEmpty = txtRegPassword.getText().isEmpty();
+            Boolean regSecretAnswerIsEmpty = txtRegPassword.getText().isEmpty();
 
-            if(txtRegPassword.getText().equals(txtRegRepPass)) {
-                if (!regNameIsEmpty && !regSurnameIsEmpty && !regAgeIsEmpty && !regUsernameIsEmpty && !regPasswordIsEmpty) {
-                    erc.isRegister(txtRegName.getText(), txtRegSurname.getText(), txtRegAge.getText(), txtRegUsername.getText(), txtRegPassword.getText());
-                } else if (regNameIsEmpty && regSurnameIsEmpty && regAgeIsEmpty && regUsernameIsEmpty && regPasswordIsEmpty) {
+
+            if (!regSecretQuestionIsEmpty && !regSecretAnswerIsEmpty && !regNameIsEmpty && !regSurnameIsEmpty && !regAgeIsEmpty && !regUsernameIsEmpty && !regPasswordIsEmpty) {
+                    erc.isRegister(txtRegName.getText(), txtRegSurname.getText(), txtRegAge.getText(), txtRegUsername.getText(), txtRegPassword.getText(), txtRegSecretQuestion.getText(), txtRegSecretAnswer.getText());
+            } else if (regNameIsEmpty && regSurnameIsEmpty && regAgeIsEmpty && regUsernameIsEmpty && regPasswordIsEmpty) {
                     System.out.println("All fields need to be filled in");
-                }
-            }else{
-                System.out.println("Password field are not the same.");
             }
         }catch(SQLException e){
             e.printStackTrace();
