@@ -42,6 +42,8 @@ public class ForgotPasswordController {
     private TextField txtForgPassUsername;
     @FXML
     private Label txtIncorrectUsername;
+    @FXML
+    private Label txtForgPassSecreQuestion;
     public void ForgPassToChanPass(ActionEvent event) throws IOException {
         try {
 
@@ -56,6 +58,7 @@ public class ForgotPasswordController {
                 Scene scene = new Scene(root);
                 stage.setScene(scene);
 
+                //txtForgPassSecreQuestion.setText(fpm.isSecretQuestion());
 
 
             }else{
@@ -65,15 +68,15 @@ public class ForgotPasswordController {
             e.printStackTrace();
         }
     }
-    @FXML
+    /*@FXML
     private Label txtForgPassSecreQuestion;
     public void ForgPassUpdate(ActionEvent event) throws IOException{
-        /*try{
+        try{
 
         }catch (SQLException e){
             e.printStackTrace();
-        }*/
+        }
 
-    }
+    }*/
 
 }

@@ -28,6 +28,45 @@ public class EmployeePanelController implements Initializable {
         }
 
     }
+    @FXML
+    private Button btnStaffToBooking;
+    public void StaffToBooking(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        String address = "src/main/ui/employeeBooking.fxml";
+        InputStream fxmlStream = new FileInputStream(address);
+        Parent root = loader.load(fxmlStream);
+
+
+        Stage stage = (Stage) btnStaffToBooking.getScene().getWindow();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+    }
+    @FXML
+    private Button btnEmployeePanelToAccBooking;
+    public void EmployeePanelToAccBooking(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        String address = "src/main/ui/employeeManageBooking.fxml";
+        InputStream fxmlStream = new FileInputStream(address);
+        Parent root = loader.load(fxmlStream);
+
+
+        Stage stage = (Stage) btnEmployeePanelToAccBooking.getScene().getWindow();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+    }
+    @FXML
+    private Button btnEmployeePanelToAccManagement;
+    public void EmployeePanelToAccManagement(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        String address = "src/main/ui/employeeManageAccount.fxml";
+        InputStream fxmlStream = new FileInputStream(address);
+        Parent root = loader.load(fxmlStream);
+
+
+        Stage stage = (Stage) btnEmployeePanelToAccManagement.getScene().getWindow();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+    }
 
     @FXML
     private Button btnStaffToMainLogin;

@@ -1,5 +1,6 @@
 package main.model;
 
+import javafx.scene.control.Label;
 import main.SQLConnection;
 
 import javax.imageio.plugins.jpeg.JPEGImageReadParam;
@@ -30,14 +31,14 @@ public class ForgotPasswordModel {
         }
     }
 
-    public Boolean SecretQuestion(String secretQuestion) throws SQLException{
+    public Boolean isSecretQuestion(String secretQuestion) throws SQLException{
         PreparedStatement preparedStatement = null;
         ResultSet resultSet=null;
         String query = "select secret_question from employee where secret_question = ?";
         try{
 
             preparedStatement = connection.prepareStatement(query);
-            preparedStatement.setString(1,secretQuestion);
+            preparedStatement.setString(1, secretQuestion);
 
             resultSet = preparedStatement.executeQuery();
             if (resultSet.next()) {
