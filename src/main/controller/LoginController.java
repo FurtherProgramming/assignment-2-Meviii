@@ -12,6 +12,8 @@ import javafx.scene.control.TextField;
 import javafx.event.ActionEvent;
 import javafx.stage.Stage;
 import javafx.stage.Window;
+import main.User;
+import main.UserHolder;
 import main.model.LoginModel;
 
 import javax.xml.soap.Text;
@@ -54,6 +56,9 @@ public class LoginController implements Initializable {
 
         try {
             if (loginModel.isLogin(txtUsername.getText(),txtPassword.getText())){
+                User u = new User(txtUsername.getText());
+                UserHolder holder = UserHolder.getInstance();
+                holder.setUser(u);
 
                 FXMLLoader loader = new FXMLLoader();
                 String address = "src/main/ui/employeePanel.fxml";

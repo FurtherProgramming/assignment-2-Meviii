@@ -12,7 +12,6 @@
          </font>
       </Label>
       <Button layoutX="195.0" layoutY="248.0" mnemonicParsing="false" onAction="#BookingBook" prefHeight="24.0" prefWidth="56.0" text="Book" />
-      <TextField fx:id="txtBookingUsername" layoutX="109.0" layoutY="152.0" prefHeight="31.0" prefWidth="142.0" promptText="USERNAME" />
       <Button fx:id="btnBackEmployeePanel" layoutX="315.0" layoutY="4.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#BackToMainEmployeePanel" text="Back" />
       <Label fx:id="labelBookingStatus" layoutX="109.0" layoutY="248.0" prefHeight="25.0" prefWidth="78.0" />
       <TextField fx:id="txtBookingDate" layoutX="109.0" layoutY="199.0" prefHeight="31.0" prefWidth="142.0" promptText="DD/MM/YYYY" />

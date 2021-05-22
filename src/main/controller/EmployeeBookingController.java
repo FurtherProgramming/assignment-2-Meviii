@@ -9,6 +9,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import main.User;
+import main.UserHolder;
 import main.model.EmployeeBookingModel;
 import main.model.LoginModel;
 
@@ -22,15 +24,20 @@ import java.text.AttributedCharacterIterator;
 
 public class EmployeeBookingController {
     EmployeeBookingModel ebm = new EmployeeBookingModel();
-    LoginModel loginModel = new LoginModel();
+    UserHolder holder = UserHolder.getInstance();
+    User u = holder.getUser();
+    String username = u.getUsername();
+
     @FXML
     private Button btnBackEmployeePanel;
+    @FXML
+    private Label lblBookingUserDisplay;
+
     public void BackToMainEmployeePanel(ActionEvent event) throws IOException {
         FXMLLoader load = new FXMLLoader();
         String address = "src/main/ui/employeePanel.fxml";
         InputStream fxmlStream = new FileInputStream(address);
         Parent root = load.load(fxmlStream);
-
 
         Stage stage = (Stage) btnBackEmployeePanel.getScene().getWindow();
         Scene scene = new Scene(root);
@@ -38,20 +45,17 @@ public class EmployeeBookingController {
     }
 
     @FXML
-    private TextField txtBookingUsername;
-    @FXML
     private TextField txtBookingDate;
     @FXML
     private Label labelBookingStatus;
     public void BookingBook(ActionEvent event) throws SQLException{
         try{
-            if (ebm.checkBooking(txtBookingUsername.getText())) {
+
+            if (ebm.checkBooking(username)) {
                 labelBookingStatus.setText("Already Booked");
-
-            }else if (ebm.isCheckUser(txtBookingUsername.getText())) {
-
-                    if (!txtBookingUsername.getText().isEmpty() && !txtBookingDate.getText().isEmpty()) {
-                        ebm.isBooking(txtBookingDate.getText(), txtBookingUsername.getText(), "Awaiting Confirmation");
+            }else if (ebm.isCheckUser(username)) {
+                    if (!txtBookingDate.getText().isEmpty()) {
+                        ebm.isBooking(txtBookingDate.getText(), username, "Awaiting Confirmation");
                         labelBookingStatus.setText("Booked!");
                     } else {
                         labelBookingStatus.setText("Incorrect Details");
