@@ -28,35 +28,6 @@ public class EmployeeRegisterModel {
         }
     }
 
-    /*public Boolean isRegister(String user, String pass, String name, String surname, String age) throws SQLException {
-        PreparedStatement preparedStatement = null;
-        ResultSet resultSet=null;
-
-        String query = "insert into employee(name = ?, surname = ?, age = ?, user = ?, pass = ?)";
-        try {
-            preparedStatement = connection.prepareStatement(query);
-            preparedStatement.setString(1, name);
-            preparedStatement.setString(2, surname);
-            preparedStatement.setString(3, age);
-            preparedStatement.setString(4, user);
-            preparedStatement.setString(5, pass);
-
-            resultSet = preparedStatement.executeQuery();
-            if (resultSet.next()){
-
-                return true;
-            }else{
-                return false;
-            }
-        }
-        catch (Exception e){
-            return false;
-        }finally{
-            preparedStatement.close();
-            resultSet.close();
-        }
-    }*/
-
     public void isRegister(String name, String surname, String age, String username, String password, String secret_question, String secret_answer) throws SQLException {
 
             String query = "INSERT INTO employee(name , surname, age, username, password, secret_question, secret_answer) VALUES (?,?,?,?,?,?,?)";

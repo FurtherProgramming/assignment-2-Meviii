@@ -21,11 +21,6 @@ public class EmployeePanelController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources){
-        if (epl.isDbConnected()){
-            //isConnected.setText("Connected");
-        }else{
-            //isConnected.setText("Not Connected");
-        }
 
     }
     @FXML
