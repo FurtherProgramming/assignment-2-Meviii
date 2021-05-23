@@ -56,7 +56,7 @@ public class EmployeeBookingController {
             }else if (ebm.isCheckUser(username)) {
                     if (!txtBookingDate.getText().isEmpty()) {
                         ebm.isBooking(txtBookingDate.getText(), username, "Awaiting Confirmation");
-                        labelBookingStatus.setText("Booked!");
+                        labelBookingStatus.setText("SeatNum: " + ebm.isSeatNum(username));
                     } else {
                         labelBookingStatus.setText("Incorrect Details");
                     }

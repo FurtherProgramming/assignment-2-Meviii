@@ -1,7 +1,10 @@
 package main.model;
 
+import javafx.fxml.FXML;
 import main.SQLConnection;
 
+import javax.swing.plaf.basic.BasicInternalFrameTitlePane;
+import java.awt.*;
 import java.sql.*;
 
 public class EmployeeManageBookingModel {
@@ -18,18 +21,45 @@ public class EmployeeManageBookingModel {
 
     public String isCheckBooking(String username) throws SQLException {
 
-        String sql = "select * from booking where username = ?";
-        try{
-            Statement statement = connection.createStatement();
-            ResultSet rs = statement.executeQuery(sql);{
-                while (rs.next()){
-                    return rs.getString("seatNum");
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+        String ret = "";
+        int i = 1;
+
+        String query = "select seatNum, date, status from booking where username = ?";
+        try {
+
+            preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setString(1, username);
+
+            resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                for (i = 1; i <= 3; i++){
+                    ret += resultSet.getString(i) + "   ";
                 }
             }
+        } catch (Exception e) {
+            return null;
+        } finally {
+            preparedStatement.close();
+            resultSet.close();
+        }
+        return ret;
+    }
 
-        }catch(SQLException e){
+    public void isRemoveBooking(String username) throws SQLException{
+        PreparedStatement preparedStatement = null;
+        ResultSet rs = null;
+        String query = "delete from booking where username = ?";
+
+        try{
+            preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setString(1, username);
+            preparedStatement.executeUpdate();
+
+        }catch (SQLException e){
             e.printStackTrace();
         }
-        return null;
+
     }
 }

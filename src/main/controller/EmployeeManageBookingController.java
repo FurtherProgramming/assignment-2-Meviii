@@ -3,22 +3,51 @@ package main.controller;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import main.User;
+import main.UserHolder;
 import main.model.EmployeeManageBookingModel;
 import main.model.LoginModel;
 
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.URL;
 import java.sql.SQLException;
+import java.util.ResourceBundle;
 
-public class EmployeeManageBookingController {
+public class EmployeeManageBookingController implements Initializable {
     public EmployeeManageBookingModel emb = new EmployeeManageBookingModel();
+    UserHolder holder = UserHolder.getInstance();
+    User u = holder.getUser();
+    String username = u.getUsername();
+
+    @FXML
+    private Label labelAccManagBookingInfo;
+    @Override
+    public void initialize(URL location, ResourceBundle resources){
+
+        UserHolder holder = UserHolder.getInstance();
+        User u = holder.getUser();
+        String username = u.getUsername();
+
+        try {
+            if(emb.isCheckBooking(username).isEmpty()){
+                labelAccManagBookingInfo.setText("            No Current Booking");
+            }else{
+                labelAccManagBookingInfo.setText(emb.isCheckBooking(username));
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
     @FXML
     private Button btnManageBookToEmployeePanel;
@@ -34,17 +63,15 @@ public class EmployeeManageBookingController {
         stage.setScene(scene);
     }
     @FXML
-    private TextField txtAccManagUser;
-    @FXML
-    private Label labelAccManagBookingInfo;
-    public void AccManagCheckBooking(ActionEvent event) throws SQLException {
-        try {
+    private Label lblBookingCancelText;
+    public void AccManagCancelBooking(ActionEvent event) {
+        try{
+                emb.isRemoveBooking(username);
+                lblBookingCancelText.setText("Booking Cancelled");
 
-                labelAccManagBookingInfo.setText(emb.isCheckBooking(txtAccManagUser.getText()));
 
-        }catch(Exception e){
+        }catch (Exception e){
             e.printStackTrace();
         }
     }
-
 }

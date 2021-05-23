@@ -6,13 +6,13 @@
 
 <AnchorPane prefHeight="394.0" prefWidth="360.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.controller.AdminPanelController">
     <children>
-        <Label layoutX="82.0" layoutY="16.0" prefHeight="136.0" prefWidth="201.0" text="    ADMIN PANEL">
+        <Label layoutX="82.0" layoutY="6.0" prefHeight="136.0" prefWidth="201.0" text="    ADMIN PANEL">
             <font>
                 <Font name="System Bold" size="22.0" />
             </font>
         </Label>
         <Button fx:id="btnAdminSignOutMainLogin" layoutX="315.0" layoutY="4.0" mnemonicParsing="false" onAction="#AdminSignOutMainLogin" text="Back" />
-        <Button layoutX="115.0" layoutY="145.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="130.0" text="Management" />
+        <Button fx:id="btnAdminPanelToManagement" layoutX="115.0" layoutY="145.0" mnemonicParsing="false" onAction="#AdminPanelToManagement" prefHeight="41.0" prefWidth="130.0" text="Management" />
         <Button layoutX="115.0" layoutY="199.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="130.0" text="Lockdown Seat" />
         <Button layoutX="115.0" layoutY="253.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="130.0" text="Release Booking" />
         <Button layoutX="115.0" layoutY="306.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="130.0" text="Generate Reports" />

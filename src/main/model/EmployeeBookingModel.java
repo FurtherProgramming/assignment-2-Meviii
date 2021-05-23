@@ -1,6 +1,5 @@
 package main.model;
 
-import com.sun.org.apache.xpath.internal.operations.Bool;
 import main.SQLConnection;
 
 import java.sql.*;
@@ -76,6 +75,7 @@ public class EmployeeBookingModel {
             preparedStatement = connection.prepareStatement(query);
             preparedStatement.setString(1, date);
             preparedStatement.setString(2, username);
+            preparedStatement.setString(3, status);
 
             preparedStatement.executeUpdate();
 
@@ -105,6 +105,32 @@ public class EmployeeBookingModel {
         catch (Exception e)
         {
             return false;
+        }finally {
+            preparedStatement.close();
+            resultSet.close();
+        }
+    }
+
+    public String isSeatNum(String user) throws SQLException{
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet=null;
+        String query = "select seatNum from booking where username = ?";
+        try {
+
+            preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setString(1, user);
+
+            resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()) {
+                return resultSet.getString("seatNum");
+            }
+            else{
+                return null;
+            }
+        }
+        catch (Exception e)
+        {
+            return null;
         }finally {
             preparedStatement.close();
             resultSet.close();

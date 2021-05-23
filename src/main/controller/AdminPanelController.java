@@ -29,4 +29,18 @@ public class AdminPanelController {
         Scene scene = new Scene(root);
         stage.setScene(scene);
     }
+
+    @FXML
+    private Button btnAdminPanelToManagement;
+    public void AdminPanelToManagement(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        String address = "src/main/ui/adminManagement.fxml";
+        InputStream fxmlStream = new FileInputStream(address);
+        Parent root = loader.load(fxmlStream);
+
+
+        Stage stage = (Stage) btnAdminPanelToManagement.getScene().getWindow();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+    }
 }
