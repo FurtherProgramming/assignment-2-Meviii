@@ -7,7 +7,7 @@
 <AnchorPane prefHeight="394.0" prefWidth="360.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.controller.EmployeeRegisterController">
     <children>
         <Button fx:id="btnRegToMainLogin" layoutX="315.0" layoutY="4.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#RegToMainLogin" text="Back" />
-      <Label layoutX="87.0" layoutY="3.0" prefHeight="164.0" prefWidth="187.0" text="EMPOLOYEE ACCOUNT CREATION" textAlignment="CENTER" textOverrun="CLIP" wrapText="true">
+      <Label layoutX="76.0" layoutY="4.0" prefHeight="164.0" prefWidth="227.0" text="EMPOLOYEE ACCOUNT CREATION" textAlignment="CENTER" textOverrun="CLIP" wrapText="true">
          <font>
             <Font name="System Bold" size="22.0" />
          </font>
@@ -20,6 +20,7 @@
       <Button layoutX="254.0" layoutY="333.0" mnemonicParsing="false" onAction="#Register" text="Register" />
       <TextField fx:id="txtRegSecretQuestion" layoutX="42.0" layoutY="256.0" prefHeight="32.0" prefWidth="132.0" promptText="SECRET QUESTION?" />
       <TextField fx:id="txtRegSecretAnswer" layoutX="42.0" layoutY="302.0" prefHeight="32.0" prefWidth="132.0" promptText="SECRET ANSWER" />
+        <Label fx:id="labelRegisterEmployee" layoutX="199.0" layoutY="304.0" prefHeight="25.0" prefWidth="105.0" />
     </children>
 
 </AnchorPane>

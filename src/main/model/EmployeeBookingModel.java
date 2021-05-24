@@ -15,31 +15,6 @@ public class EmployeeBookingModel {
 
     }
 
-    /*public Boolean checkVacancy(Boolean vacancy) throws SQLException {
-        PreparedStatement preparedStatement = null;
-        ResultSet resultSet=null;
-        String query = "select vacancy from booking where vacancy = ?";
-        try {
-
-            preparedStatement = connection.prepareStatement(query);
-            preparedStatement.setBoolean(1, vacancy);
-
-            resultSet = preparedStatement.executeQuery();
-            if (resultSet.next()) {
-                return true;
-            }
-            else{
-                return false;
-            }
-        }
-        catch (Exception e)
-        {
-            return false;
-        }finally {
-            preparedStatement.close();
-            resultSet.close();
-        }
-    }*/
     public Boolean checkBooking(String user) throws SQLException{
         PreparedStatement preparedStatement = null;
         ResultSet resultSet=null;

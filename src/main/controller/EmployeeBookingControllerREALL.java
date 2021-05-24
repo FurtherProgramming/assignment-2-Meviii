@@ -1,10 +1,8 @@
 package main.controller;
 
-import com.sun.javafx.css.Style;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Group;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -20,7 +18,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.sql.SQLException;
 
-public class EmployeeBookingController {
+public class EmployeeBookingControllerREALL {
     EmployeeBookingModel ebm = new EmployeeBookingModel();
     UserHolder holder = UserHolder.getInstance();
     User u = holder.getUser();
@@ -66,76 +64,6 @@ public class EmployeeBookingController {
             e.printStackTrace();
         }
     }
-
-    @FXML
-    private Button btnSeat1;
-    public void Seat1(ActionEvent event){
-
-        try{
-            if (ebm.isCheckUser(username)){
-
-            }else if(btnSeat1.getStyle() == "red"){
-                btnSeat1.setStyle("-fx-background-color: red");
-            }else{
-                System.out.println("NEITHER");
-            }
-
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-
-    }
-    public void Seat2(ActionEvent event){
-
-    }
-    public void Seat3(ActionEvent event){
-
-    }
-    public void Seat4(ActionEvent event){
-
-    }
-    public void Seat5(ActionEvent event){
-
-    }
-    public void Seat6(ActionEvent event){
-
-    }
-    public void Seat7(ActionEvent event){
-
-    }
-    public void Seat8(ActionEvent event){
-
-    }
-    public void Seat9(ActionEvent event){
-
-    }
-    public void Seat10(ActionEvent event){
-
-    }
-    public void Seat11(ActionEvent event){
-
-    }
-    public void Seat12(ActionEvent event){
-
-    }
-    public void Seat13(ActionEvent event){
-
-    }
-    public void Seat14(ActionEvent event){
-
-    }
-    public void Seat15(ActionEvent event){
-
-    }
-    public void Seat16(ActionEvent event){
-
-    }
-
-
-
-
-
-
 
 
 }

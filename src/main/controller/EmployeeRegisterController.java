@@ -8,6 +8,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import main.model.EmployeeRegisterModel;
@@ -54,6 +55,8 @@ public class EmployeeRegisterController implements Initializable {
     private TextField txtRegSecretQuestion;
     @FXML
     private TextField txtRegSecretAnswer;
+    @FXML
+    private Label labelRegisterEmployee;
     public void Register(ActionEvent event) throws SQLException {
         try {
             Boolean regNameIsEmpty = txtRegName.getText().isEmpty();
@@ -64,11 +67,15 @@ public class EmployeeRegisterController implements Initializable {
             Boolean regSecretQuestionIsEmpty = txtRegPassword.getText().isEmpty();
             Boolean regSecretAnswerIsEmpty = txtRegPassword.getText().isEmpty();
 
-
-            if (!regSecretQuestionIsEmpty && !regSecretAnswerIsEmpty && !regNameIsEmpty && !regSurnameIsEmpty && !regAgeIsEmpty && !regUsernameIsEmpty && !regPasswordIsEmpty) {
+            if (!erc.isCheckUser(txtRegUsername.getText())) {
+                if (!regSecretQuestionIsEmpty && !regSecretAnswerIsEmpty && !regNameIsEmpty && !regSurnameIsEmpty && !regAgeIsEmpty && !regUsernameIsEmpty && !regPasswordIsEmpty) {
                     erc.isRegister(txtRegName.getText(), txtRegSurname.getText(), txtRegAge.getText(), txtRegUsername.getText(), txtRegPassword.getText(), txtRegSecretQuestion.getText(), txtRegSecretAnswer.getText());
-            } else if (regNameIsEmpty && regSurnameIsEmpty && regAgeIsEmpty && regUsernameIsEmpty && regPasswordIsEmpty) {
-                    System.out.println("All fields need to be filled in");
+                    labelRegisterEmployee.setText("Account Created");
+                } else if (regNameIsEmpty && regSurnameIsEmpty && regAgeIsEmpty && regUsernameIsEmpty && regPasswordIsEmpty) {
+                    labelRegisterEmployee.setText("Incorrect Details");
+                }
+            }else{
+                labelRegisterEmployee.setText("Username in use");
             }
         }catch(SQLException e){
             e.printStackTrace();

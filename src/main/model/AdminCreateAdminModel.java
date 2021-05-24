@@ -7,11 +7,11 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class EmployeeRegisterModel {
+public class AdminCreateAdminModel {
 
     Connection connection;
 
-    public EmployeeRegisterModel(){
+    public AdminCreateAdminModel(){
 
         connection = SQLConnection.connect();
         if (connection == null)
@@ -19,19 +19,10 @@ public class EmployeeRegisterModel {
 
     }
 
-    public Boolean isDbConnected(){
-        try {
-            return !connection.isClosed();
-        }
-        catch(Exception e){
-            return false;
-        }
-    }
+    public void isCreate(String name, String surname, String age, String username, String password, String secret_question, String secret_answer) throws SQLException {
 
-    public void isRegister(String name, String surname, String age, String username, String password, String secret_question, String secret_answer) throws SQLException {
-
-            String query = "INSERT INTO employee(name , surname, age, username, password, secret_question, secret_answer) VALUES (?,?,?,?,?,?,?)";
-            PreparedStatement preparedStatement = null;
+        String query = "INSERT INTO admin(name , surname, age, username, password, secret_question, secret_answer) VALUES (?,?,?,?,?,?,?)";
+        PreparedStatement preparedStatement = null;
         try {
             preparedStatement = connection.prepareStatement(query);
             preparedStatement.setString(1, name);
@@ -48,10 +39,11 @@ public class EmployeeRegisterModel {
         }
 
     }
+
     public Boolean isCheckUser(String user) throws SQLException{
         PreparedStatement preparedStatement = null;
         ResultSet resultSet=null;
-        String query = "select * from employee where username = ?";
+        String query = "select * from admin where username = ?";
         try {
 
             preparedStatement = connection.prepareStatement(query);
@@ -73,5 +65,4 @@ public class EmployeeRegisterModel {
             resultSet.close();
         }
     }
-
 }

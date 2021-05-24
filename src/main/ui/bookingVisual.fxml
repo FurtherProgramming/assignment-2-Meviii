@@ -3,12 +3,12 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="647.0" prefWidth="560.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="647.0" prefWidth="560.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.controller.EmployeeBookingController">
    <children>
       <Button layoutX="23.0" layoutY="369.0" mnemonicParsing="false" onAction="#Seat7" prefHeight="50.0" prefWidth="70.0" rotate="90.0" style="-fx-background-color: red;" />
       <Button layoutX="23.0" layoutY="461.0" mnemonicParsing="false" onAction="#Seat10" prefHeight="50.0" prefWidth="70.0" rotate="90.0" style="-fx-background-color: lightgreen;" />
       <Button layoutX="23.0" layoutY="556.0" mnemonicParsing="false" onAction="#Seat12" prefHeight="50.0" prefWidth="70.0" rotate="90.0" style="-fx-background-color: red;" />
-      <Button layoutX="35.0" layoutY="14.0" mnemonicParsing="false" onAction="#Seat1" prefHeight="50.0" prefWidth="70.0" style="-fx-background-color: lightgreen;" />
+      <Button fx:id="btnSeat1" layoutX="35.0" layoutY="14.0" mnemonicParsing="false" onAction="#Seat1" prefHeight="50.0" prefWidth="70.0" style="-fx-background-color: lightgreen;" stylesheets="@../css.css" />
       <Button layoutX="24.0" layoutY="185.0" mnemonicParsing="false" onAction="#Seat3" prefHeight="50.0" prefWidth="70.0" rotate="90.0" style="-fx-background-color: red;" />
       <Button layoutX="187.0" layoutY="14.0" mnemonicParsing="false" onAction="#Seat2" prefHeight="50.0" prefWidth="70.0" style="-fx-background-color: red;" />
       <Button layoutX="24.0" layoutY="277.0" mnemonicParsing="false" onAction="#Seat5" prefHeight="50.0" prefWidth="70.0" rotate="90.0" style="-fx-background-color: lightgreen;" />
@@ -17,9 +17,9 @@
       <Button layoutX="294.0" layoutY="359.0" mnemonicParsing="false" onAction="#Seat8" prefHeight="50.0" prefWidth="70.0" style="-fx-background-color: lightgreen;" />
       <Button layoutX="398.0" layoutY="359.0" mnemonicParsing="false" onAction="#Seat9" prefHeight="50.0" prefWidth="70.0" style="-fx-background-color: red;" />
       <Button layoutX="477.0" layoutY="474.0" mnemonicParsing="false" onAction="#Seat11" prefHeight="50.0" prefWidth="70.0" rotate="90.0" style="-fx-background-color: lightgreen;" />
-      <Button layoutX="477.0" layoutY="571.0" mnemonicParsing="false" onAction="#Seat17" prefHeight="50.0" prefWidth="70.0" rotate="90.0" style="-fx-background-color: red;" />
+      <Button layoutX="477.0" layoutY="571.0" mnemonicParsing="false" onAction="#Seat16" prefHeight="50.0" prefWidth="70.0" rotate="90.0" style="-fx-background-color: red;" />
       <Button layoutX="152.0" layoutY="575.0" mnemonicParsing="false" onAction="#Seat13" prefHeight="50.0" prefWidth="70.0" style="-fx-background-color: lightgreen;" />
       <Button layoutX="245.0" layoutY="575.0" mnemonicParsing="false" onAction="#Seat14" prefHeight="50.0" prefWidth="70.0" style="-fx-background-color: red;" />
-      <Button layoutX="337.0" layoutY="575.0" mnemonicParsing="false" onAction="#Seat16" prefHeight="50.0" prefWidth="70.0" style="-fx-background-color: lightgreen;" />
+      <Button layoutX="337.0" layoutY="575.0" mnemonicParsing="false" onAction="#Seat15" prefHeight="50.0" prefWidth="70.0" style="-fx-background-color: lightgreen;" />
    </children>
 </AnchorPane>

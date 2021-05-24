@@ -46,7 +46,7 @@ public class AdminManagementController {
     private Button btnAdminAccManaToCreateAdmin;
     public void AdminAccManaToCreateAdmin(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader();
-        String address = "src/main/ui/adminManageAddAdmin.fxml";
+        String address = "src/main/ui/adminCreateAdmin.fxml";
         InputStream fxmlStream = new FileInputStream(address);
         Parent root = loader.load(fxmlStream);
 
@@ -59,7 +59,7 @@ public class AdminManagementController {
     private Button btnAdminAccManaToDelAdmin;
     public void AdminAccManaToDelAdmin(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader();
-        String address = "src/main/ui/adminManageDelAdmin.fxml";
+        String address = "src/main/ui/adminDeleteAdmin.fxml";
         InputStream fxmlStream = new FileInputStream(address);
         Parent root = loader.load(fxmlStream);
 

@@ -13,7 +13,7 @@
         </Label>
         <Button fx:id="btnAdminAccManaToWhitelist" layoutX="115.0" layoutY="145.0" mnemonicParsing="false" onAction="#AdminAccManaToWhitelist" prefHeight="41.0" prefWidth="130.0" text="Whitelist" />
         <Button fx:id="btnAdminAccManaToCreateAdmin" layoutX="115.0" layoutY="197.0" mnemonicParsing="false" onAction="#AdminAccManaToCreateAdmin" prefHeight="41.0" prefWidth="130.0" text="Create Admin" />
-      <Button fx:id="btnAdminAccManaToDelAdmin" layoutX="115.0" layoutY="250.0" mnemonicParsing="false" onAction="#AdminAccManaToDelAdmin" prefHeight="41.0" prefWidth="130.0" text="Delete User" />
+      <Button fx:id="btnAdminAccManaToDelAdmin" layoutX="115.0" layoutY="250.0" mnemonicParsing="false" onAction="#AdminAccManaToDelAdmin" prefHeight="41.0" prefWidth="130.0" text="Delete Admin" />
         <Button fx:id="btnAdminAccManagementToAdminPanel" layoutX="315.0" layoutY="4.0" mnemonicParsing="false" onAction="#AdminAccManagementToAdminPanel" text="Back" />
       <Button fx:id="btnAdminAccManaToManEmployee" layoutX="115.0" layoutY="302.0" mnemonicParsing="false" onAction="#AdminAccManaToManEmployee" prefHeight="41.0" prefWidth="130.0" text="Manage Employee" />
     </children>
