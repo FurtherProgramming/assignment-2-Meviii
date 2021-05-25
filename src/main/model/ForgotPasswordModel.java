@@ -29,7 +29,52 @@ public class ForgotPasswordModel {
         }
     }
 
-    public void isSecretQuestion(String username) throws SQLException{
+    public String isSecretQuestion(String username) throws SQLException{
+        String query = "select secret_question from employee where username = ?";
+        ResultSet rs = null;
+        PreparedStatement preparedStatement = null;
+        try{
+            preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setString(1, username);
+
+            rs = preparedStatement.executeQuery();
+            if (rs.next()){
+                return rs.getString("secret_question");
+            }else{
+                return null;
+            }
+
+        }catch(SQLException e){
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public String isSecAnswer(String username) throws SQLException{
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet=null;
+        String query = "select secret_answer from employee where username = ?";
+        try {
+
+            preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setString(1, username);
+
+            resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()) {
+                return resultSet.getString("secret_answer");
+            }
+            else{
+                return null;
+            }
+        }
+        catch (Exception e)
+        {
+            return null;
+        }finally {
+            preparedStatement.close();
+            resultSet.close();
+        }
+
     }
 
     public Boolean isCheck(String user ) throws SQLException {

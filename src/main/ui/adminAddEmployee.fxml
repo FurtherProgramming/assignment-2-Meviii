@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="394.0" prefWidth="360.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.controller.AdminAddEmployeeController">
+    <children>
+        <Button fx:id="btnAddEmpToAdminEmpManagement" layoutX="315.0" layoutY="4.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#AddEmpToAdminEmpManagement" text="Back" />
+        <Label layoutX="87.0" layoutY="-6.0" prefHeight="164.0" prefWidth="202.0" text="  ADD EMPLOYEE" textAlignment="CENTER" textOverrun="CLIP" wrapText="true">
+            <font>
+                <Font name="System Bold" size="22.0" />
+            </font></Label>
+        <TextField fx:id="txtAddEmpName" layoutX="42.0" layoutY="156.0" prefHeight="32.0" prefWidth="132.0" promptText="NAME" />
+        <TextField fx:id="txtAddEmpSurname" layoutX="189.0" layoutY="156.0" prefHeight="32.0" prefWidth="132.0" promptText="SURNAME" />
+        <TextField fx:id="txtAddEmpUsername" layoutX="42.0" layoutY="199.0" prefHeight="32.0" prefWidth="132.0" promptText="USERNAME" />
+        <PasswordField fx:id="txtAddEmpPassword" layoutX="189.0" layoutY="199.0" prefHeight="32.0" prefWidth="132.0" promptText="PASSWORD" />
+        <TextField fx:id="txtAddEmpAge" layoutX="189.0" layoutY="245.0" prefHeight="32.0" prefWidth="132.0" promptText="AGE" />
+        <Button layoutX="280.0" layoutY="295.0" mnemonicParsing="false" onAction="#AddEmployee" prefHeight="25.0" prefWidth="41.0" text="Add" />
+        <TextField fx:id="txtAddEmpSecretQuestion" layoutX="42.0" layoutY="245.0" prefHeight="32.0" prefWidth="132.0" promptText="SECRET QUESTION?" />
+        <TextField fx:id="txtAddEmpSecretAnswer" layoutX="42.0" layoutY="291.0" prefHeight="32.0" prefWidth="132.0" promptText="SECRET ANSWER" />
+        <Label fx:id="labelRegisterEmployee" layoutX="189.0" layoutY="303.0" prefHeight="32.0" prefWidth="91.0" />
+    </children>
+</AnchorPane>

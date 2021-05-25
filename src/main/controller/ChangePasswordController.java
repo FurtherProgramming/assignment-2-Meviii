@@ -8,6 +8,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.Slider;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import main.User;
 import main.UserHolder;
@@ -18,23 +20,60 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 import java.sql.SQLException;
-import java.util.ResourceBundle;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class ChangePasswordController implements Initializable {
     ForgotPasswordModel fpm = new ForgotPasswordModel();
+    UserHolder holder = UserHolder.getInstance();
+    User u = holder.getUser();
+    String username = u.getUsername();
 
     @FXML
     private Label lblForgPassSecreQuestion;
     @Override
     public void initialize(URL location, ResourceBundle resources){
 
-        UserHolder holder = UserHolder.getInstance();
-        User u = holder.getUser();
-        String username = u.getUsername();
-
         try {
-            lblForgPassSecreQuestion.setText("NEED TO FIX");
+            lblForgPassSecreQuestion.setText(fpm.isSecretQuestion(username));
         } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    String chars = "abcdefghijklmnopqrstuvwxyz1234567890";
+    public static String RandomPass(String chars, int length)
+    {
+        Random randomize = new Random();
+        StringBuilder builder = new StringBuilder();
+
+        for (int i=0; i<length; i++)
+        {
+            builder.append(chars.charAt(randomize.nextInt(chars.length())));
+        }
+        return builder.toString();
+    }
+
+    @FXML
+    private TextField txtForgPassSecreAnswer;
+    @FXML
+    private Label labelUpdateStatus;
+    public void UpdatePassword(ActionEvent event) throws SQLException {
+        String answer = fpm.isSecAnswer(username);
+
+        try{
+            if (txtForgPassSecreAnswer.getText().isEmpty()){
+                labelUpdateStatus.setText("Enter Answer");
+
+            }else if (txtForgPassSecreAnswer.getText() == answer){
+                labelUpdateStatus.setText("correct");
+                labelUpdateStatus.setText(RandomPass(chars, 7));
+
+            }else {
+                labelUpdateStatus.setText("Incorrect");
+            }
+
+        }catch (Exception e){
             e.printStackTrace();
         }
     }
