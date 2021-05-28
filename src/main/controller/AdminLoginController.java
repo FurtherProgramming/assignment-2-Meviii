@@ -10,6 +10,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.event.ActionEvent;
 import javafx.stage.Stage;
+import main.User;
+import main.UserHolder;
 import main.model.AdminLoginModel;
 
 import java.io.FileInputStream;
@@ -48,6 +50,9 @@ public class AdminLoginController implements Initializable {
 
         try {
             if (alm.isLogin(txtUsername.getText(),txtPassword.getText())){
+                User u = new User(txtUsername.getText());
+                UserHolder holder = UserHolder.getInstance();
+                holder.setUser(u);
 
                 FXMLLoader loader = new FXMLLoader();
                 String address = "src/main/ui/adminPanel.fxml";

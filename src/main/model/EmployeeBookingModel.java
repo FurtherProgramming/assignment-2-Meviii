@@ -44,7 +44,7 @@ public class EmployeeBookingModel {
 
     public void isBooking(String date, String username, String status) throws SQLException {
         PreparedStatement preparedStatement = null;
-        String query = "insert into booking (date, username, status) VALUES (?,?, ?)";
+        String query = "insert into booking (date, username, status) VALUES (?,?,?)";
         try {
 
             preparedStatement = connection.prepareStatement(query);

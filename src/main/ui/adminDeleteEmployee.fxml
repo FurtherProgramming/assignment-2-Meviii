@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="394.0" prefWidth="360.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.controller.AdminDeleteEmployeeController">
+    <children>
+        <Button fx:id="btnDeleteEmployeeToEmpManagement" layoutX="315.0" layoutY="4.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#DeleteEmployeeToEmpManagement" text="Back" />
+        <Label layoutX="79.0" layoutY="17.0" prefHeight="164.0" prefWidth="202.0" text="EMPLOYEE DELETION" textAlignment="CENTER" textOverrun="CLIP" wrapText="true">
+            <font>
+                <Font name="System Bold" size="22.0" />
+            </font>
+        </Label>
+        <Button layoutX="195.0" layoutY="207.0" mnemonicParsing="false" onAction="#Delete" text="Delete" />
+        <TextField fx:id="txtAdminSecretAnswer" layoutX="114.0" layoutY="168.0" prefHeight="32.0" prefWidth="132.0" promptText="EMPLOYEE USER" />
+        <Label fx:id="labelAdminCreateAdmin" layoutX="114.0" layoutY="207.0" prefHeight="25.0" prefWidth="72.0" text="Status" />
+    </children>
+
+</AnchorPane>

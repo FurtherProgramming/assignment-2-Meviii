@@ -33,9 +33,9 @@ public class EmployeeManageBookingController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources){
 
-        UserHolder holder = UserHolder.getInstance();
+        /*UserHolder holder = UserHolder.getInstance();
         User u = holder.getUser();
-        String username = u.getUsername();
+        String username = u.getUsername();*/
 
         try {
             if(emb.isCheckBooking(username).isEmpty()){

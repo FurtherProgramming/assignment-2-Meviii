@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="394.0" prefWidth="360.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.controller.AdminWhitelistController">
+    <children>
+        <Label layoutX="127.0" prefHeight="147.0" prefWidth="179.0" text="WHITELIST" textAlignment="CENTER" wrapText="true">
+            <font>
+                <Font name="System Bold" size="22.0" />
+            </font>
+        </Label>
+        <Button fx:id="btnWhitelist" layoutX="181.0" layoutY="214.0" mnemonicParsing="false" onAction="#Whitelist" prefHeight="25.0" prefWidth="72.0" text="Whitelist" />
+
+        <Button fx:id="btnAdminWhitelistToManagement" layoutX="315.0" layoutY="4.0" mnemonicParsing="false" onAction="#AdminWhitelistToManagement" text="Back" />
+      <TextField layoutX="106.0" layoutY="173.0" promptText="USERNAME" />
+      <Label layoutX="106.0" layoutY="214.0" prefHeight="25.0" prefWidth="72.0" text="Status" />
+    </children>
+
+</AnchorPane>

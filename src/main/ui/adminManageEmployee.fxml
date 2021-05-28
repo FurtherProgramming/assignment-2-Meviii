@@ -11,8 +11,9 @@
             <font>
                 <Font name="System Bold" size="22.0" />
             </font></Label>
-      <Button layoutX="120.0" layoutY="216.0" mnemonicParsing="false" onAction="#AdminEmployeeManageToAddEmployee" prefHeight="41.0" prefWidth="116.0" text="Add Employee" />
-      <Button layoutX="120.0" layoutY="161.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="116.0" text="Alter Employee" />
+      <Button fx:id="btnAdminManageEmpToDeleteEmp" layoutX="120.0" layoutY="216.0" mnemonicParsing="false" onAction="#AdminManageEmpToDeleteEmp" prefHeight="41.0" prefWidth="116.0" text="Delete Employee" />
+      <Button fx:id="btnAdminManageEmpToUpdateEmp" layoutX="120.0" layoutY="161.0" mnemonicParsing="false" onAction="#AdminManageEmpToUpdateEmp" prefHeight="41.0" prefWidth="116.0" text="Update Employee" />
+      <Button fx:id="btnAdminManageEmpToDeactivateEmp" layoutX="120.0" layoutY="269.0" mnemonicParsing="false" onAction="#AdminManageEmpToDeactivateEmp" prefHeight="41.0" prefWidth="116.0" text="Deactivate Employee" />
     </children>
 
 </AnchorPane>

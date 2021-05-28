@@ -71,8 +71,8 @@ public class EmployeeRegisterController implements Initializable {
                 if (!regSecretQuestionIsEmpty && !regSecretAnswerIsEmpty && !regNameIsEmpty && !regSurnameIsEmpty && !regAgeIsEmpty && !regUsernameIsEmpty && !regPasswordIsEmpty) {
                     erc.isRegister(txtRegName.getText(), txtRegSurname.getText(), txtRegAge.getText(), txtRegUsername.getText(), txtRegPassword.getText(), txtRegSecretQuestion.getText(), txtRegSecretAnswer.getText());
                     labelRegisterEmployee.setText("Account Created");
-                } else if (regNameIsEmpty && regSurnameIsEmpty && regAgeIsEmpty && regUsernameIsEmpty && regPasswordIsEmpty) {
-                    labelRegisterEmployee.setText("Incorrect Details");
+                } else if (regNameIsEmpty || regSurnameIsEmpty || regAgeIsEmpty || regUsernameIsEmpty || regPasswordIsEmpty || regSecretQuestionIsEmpty || regSecretAnswerIsEmpty) {
+                    labelRegisterEmployee.setText("Empty Fields");
                 }
             }else{
                 labelRegisterEmployee.setText("Username in use");

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="394.0" prefWidth="360.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.controller.AdminUpdateEmployeeDetailsController">
+    <children>
+        <Button fx:id="btnEmpUpdDetailToUserCheck" layoutX="315.0" layoutY="4.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#EmpUpdDetailToUserCheck" text="Back" />
+        <Label layoutX="87.0" layoutY="-18.0" prefHeight="164.0" prefWidth="202.0" text="UPDATE EMPLOYEE" textAlignment="CENTER" textOverrun="CLIP" wrapText="true">
+            <font>
+                <Font name="System Bold" size="22.0" />
+            </font>
+        </Label>
+        <TextField fx:id="txtName" layoutX="42.0" layoutY="185.0" prefHeight="32.0" prefWidth="132.0" promptText="NAME" />
+        <TextField fx:id="txtSurname" layoutX="189.0" layoutY="185.0" prefHeight="32.0" prefWidth="132.0" promptText="SURNAME" />
+        <TextField fx:id="txtUsername" layoutX="42.0" layoutY="228.0" prefHeight="32.0" prefWidth="132.0" promptText="USERNAME" />
+        <PasswordField fx:id="txtPassword" layoutX="189.0" layoutY="228.0" prefHeight="32.0" prefWidth="132.0" promptText="PASSWORD" />
+        <TextField fx:id="txtAge" layoutX="189.0" layoutY="274.0" prefHeight="32.0" prefWidth="132.0" promptText="AGE" />
+        <Button layoutX="254.0" layoutY="351.0" mnemonicParsing="false" onAction="#Update" text="Update" />
+        <TextField fx:id="txtSecretQuestion" layoutX="42.0" layoutY="274.0" prefHeight="32.0" prefWidth="132.0" promptText="SECRET QUESTION?" />
+        <TextField fx:id="txtSecretAnswer" layoutX="42.0" layoutY="320.0" prefHeight="32.0" prefWidth="132.0" promptText="SECRET ANSWER" />
+        <Label fx:id="lblStatus" layoutX="199.0" layoutY="322.0" prefHeight="25.0" prefWidth="105.0" />
+      <TextArea fx:id="lblUserDetail" layoutX="28.0" layoutY="134.0" prefHeight="40.0" prefWidth="309.0" />
+      <Label layoutX="28.0" layoutY="111.0" prefHeight="17.0" prefWidth="309.0" text="ID | NAME | SURNAME | AGE | USER | PASS | SQ | ANSWER" />
+    </children>
+
+</AnchorPane>

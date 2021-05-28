@@ -7,40 +7,24 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class AdminDeleteModel {
+public class AdminDeleteEmployeeModel {
     Connection connection;
 
-    public AdminDeleteModel(){
+    public AdminDeleteEmployeeModel(){
 
         connection = SQLConnection.connect();
         if (connection == null)
             System.exit(1);
 
     }
-
-    public void isDelete(String username) throws SQLException {
-
-        String query = "DELETE FROM admin where username = ?";
+    public Boolean isCheckUser(String user) throws SQLException {
         PreparedStatement preparedStatement = null;
         ResultSet resultSet=null;
-        try{
-            preparedStatement = connection.prepareStatement(query);
-            preparedStatement.setString(1, username);
-            preparedStatement.executeUpdate();
-
-        }catch (SQLException e){
-            e.printStackTrace();
-        }
-    }
-
-    public Boolean isCheckUser(String username) throws SQLException{
-        PreparedStatement preparedStatement = null;
-        ResultSet resultSet=null;
-        String query = "select * from admin where username = ?";
+        String query = "select * from employee where username = ?";
         try {
 
             preparedStatement = connection.prepareStatement(query);
-            preparedStatement.setString(1, username);
+            preparedStatement.setString(1, user);
 
             resultSet = preparedStatement.executeQuery();
             if (resultSet.next()) {
@@ -57,5 +41,20 @@ public class AdminDeleteModel {
             preparedStatement.close();
             resultSet.close();
         }
+    }
+    public void isDeleteUser(String username) throws SQLException{
+        PreparedStatement preparedStatement = null;
+        ResultSet rs = null;
+        String query = "delete from employee where username = ?";
+
+        try{
+            preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setString(1, username);
+            preparedStatement.executeUpdate();
+
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+
     }
 }

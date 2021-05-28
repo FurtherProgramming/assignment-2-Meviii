@@ -10,8 +10,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import main.model.AdminCreateAdminModel;
-import main.model.AdminDeleteModel;
+import main.model.AdminDeleteAdminModel;
+
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -21,7 +21,7 @@ import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class AdminDeleteAdminController implements Initializable {
-    AdminDeleteModel adm = new AdminDeleteModel();
+    AdminDeleteAdminModel adm = new AdminDeleteAdminModel();
 
     @Override
     public void initialize(URL location, ResourceBundle resources){
