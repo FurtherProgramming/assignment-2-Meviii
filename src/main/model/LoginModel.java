@@ -57,4 +57,27 @@ public class LoginModel {
 
     }
 
+    public String isActive(String username) throws SQLException {
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet=null;
+        String query = "select active from employee where username = ?";
+        try {
+
+            preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setString(1, username);
+
+            resultSet = preparedStatement.executeQuery();
+            return resultSet.getString("active");
+
+        }
+        catch (Exception e)
+        {
+            return null;
+        }finally {
+            preparedStatement.close();
+            resultSet.close();
+        }
+
+    }
+
 }

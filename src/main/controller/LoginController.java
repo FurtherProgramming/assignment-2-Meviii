@@ -22,6 +22,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 import java.sql.SQLException;
+import java.util.Locale;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
@@ -55,7 +56,7 @@ public class LoginController implements Initializable {
     public void Login(ActionEvent event) throws IOException {
 
         try {
-            if (loginModel.isLogin(txtUsername.getText(),txtPassword.getText())){
+            if (loginModel.isLogin(txtUsername.getText(),txtPassword.getText()) && (loginModel.isActive(txtUsername.getText()).equals("1"))){
                 User u = new User(txtUsername.getText());
                 UserHolder holder = UserHolder.getInstance();
                 holder.setUser(u);
@@ -69,8 +70,12 @@ public class LoginController implements Initializable {
                 Scene scene = new Scene(root);
                 stage.setScene(scene);
 
-            }else{
+            }else if (!loginModel.isLogin(txtUsername.getText(),txtPassword.getText())){
                 isConnected.setText("Incorrect Login");
+            }else if(loginModel.isLogin(txtUsername.getText(), txtPassword.getText()) && (loginModel.isActive(txtUsername.getText()).equals("0"))){
+                isConnected.setText("Account Locked");
+            }else{
+                isConnected.setText("Error");
             }
         } catch (SQLException e) {
             e.printStackTrace();

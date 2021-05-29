@@ -13,8 +13,8 @@
             </font>
         </Label>
         <Button layoutX="195.0" layoutY="207.0" mnemonicParsing="false" onAction="#Delete" text="Delete" />
-        <TextField fx:id="txtAdminSecretAnswer" layoutX="114.0" layoutY="168.0" prefHeight="32.0" prefWidth="132.0" promptText="EMPLOYEE USER" />
-        <Label fx:id="labelAdminCreateAdmin" layoutX="114.0" layoutY="207.0" prefHeight="25.0" prefWidth="72.0" text="Status" />
+        <TextField fx:id="txtUsername" layoutX="114.0" layoutY="168.0" prefHeight="32.0" prefWidth="132.0" promptText="EMPLOYEE USER" />
+        <Label fx:id="lblStatus" layoutX="114.0" layoutY="207.0" prefHeight="25.0" prefWidth="72.0" />
     </children>
 
 </AnchorPane>

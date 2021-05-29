@@ -44,13 +44,13 @@ public class AdminDeactivateEmployeeModel {
         }
     }
 
-    public void isDeactivate(String username,  String userInitial) throws SQLException {
+    public void isDeactivate(Boolean status,  String userInitial) throws SQLException {
 
         String query = "UPDATE employee SET active=? where username =?";
         PreparedStatement preparedStatement = null;
         try {
             preparedStatement = connection.prepareStatement(query);
-            preparedStatement.setString(1, username);
+            preparedStatement.setBoolean(1, status);
             preparedStatement.setString(2, userInitial);
             preparedStatement.executeUpdate();
 

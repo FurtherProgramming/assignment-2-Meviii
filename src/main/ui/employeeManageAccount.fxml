@@ -12,9 +12,15 @@
             </font>
         </Label>
         <Button fx:id="btnManageAccToEmployeePanel" layoutX="315.0" layoutY="4.0" mnemonicParsing="false" onAction="#ManageAccToEmployeePanel" text="Back" />
-      <TextField layoutX="33.0" layoutY="261.0" prefHeight="25.0" prefWidth="137.0" promptText="CURRENT PASS" />
-      <TextField layoutX="180.0" layoutY="261.0" promptText="NEW PASS" />
-      <Button layoutX="139.0" layoutY="306.0" mnemonicParsing="false" text="Update Pass" />
+      <TextField fx:id="txtCurrPass" layoutX="194.0" layoutY="211.0" prefHeight="25.0" prefWidth="97.0" promptText="CURRENT PASS" />
+      <TextField fx:id="txtNewPass" layoutX="194.0" layoutY="249.0" prefHeight="25.0" prefWidth="97.0" promptText="NEW PASS" />
+      <TextField fx:id="txtName" layoutX="71.0" layoutY="173.0" prefHeight="25.0" prefWidth="97.0" promptText="NAME" />
+      <TextField fx:id="txtSAnswer" layoutX="71.0" layoutY="287.0" prefHeight="25.0" prefWidth="97.0" promptText="SECRET ANSWER" />
+      <Button layoutX="236.0" layoutY="287.0" mnemonicParsing="false" onAction="#Update" text="Update" />
+      <TextField fx:id="txtSQuestion" layoutX="71.0" layoutY="249.0" prefHeight="25.0" prefWidth="97.0" promptText="SECRET QUESTION" />
+      <TextField fx:id="txtAge" layoutX="71.0" layoutY="211.0" prefHeight="25.0" prefWidth="97.0" promptText="AGE" />
+      <Label fx:id="lblStatus" layoutX="194.0" layoutY="314.0" prefHeight="25.0" prefWidth="97.0" />
+      <TextField fx:id="txtSurname" layoutX="194.0" layoutY="173.0" prefHeight="25.0" prefWidth="97.0" promptText="SURNAME" />
     </children>
 
 </AnchorPane>

@@ -58,19 +58,22 @@ public class ChangePasswordController implements Initializable {
     private TextField txtForgPassSecreAnswer;
     @FXML
     private Label labelUpdateStatus;
+    @FXML
+    private Label lblNewPass;
     public void UpdatePassword(ActionEvent event) throws SQLException {
-        String answer = fpm.isSecAnswer(username);
-
+        String newPass = RandomPass(chars, 7);
         try{
+            labelUpdateStatus.setText(fpm.isSecAnswer(username));
             if (txtForgPassSecreAnswer.getText().isEmpty()){
                 labelUpdateStatus.setText("Enter Answer");
-
-            }else if (txtForgPassSecreAnswer.getText() == answer){
-                labelUpdateStatus.setText("correct");
-                labelUpdateStatus.setText(RandomPass(chars, 7));
-
-            }else {
+            }else if (!txtForgPassSecreAnswer.getText().equals(fpm.isSecAnswer(username))){
                 labelUpdateStatus.setText("Incorrect");
+            }else if (txtForgPassSecreAnswer.getText().equals(fpm.isSecAnswer(username))){
+                labelUpdateStatus.setText("Correct!");
+                fpm.isNewPass(newPass, username);
+                lblNewPass.setText("Your new password is: " + newPass +".");
+            }else{
+                labelUpdateStatus.setText("Error");
             }
 
         }catch (Exception e){

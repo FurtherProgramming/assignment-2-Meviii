@@ -38,6 +38,7 @@ public class ForgotPasswordModel {
             preparedStatement.setString(1, username);
 
             rs = preparedStatement.executeQuery();
+
             if (rs.next()){
                 return rs.getString("secret_question");
             }else{
@@ -102,5 +103,22 @@ public class ForgotPasswordModel {
             resultSet.close();
         }
 
+    }
+
+    public void isNewPass(String password, String username) throws SQLException {
+        PreparedStatement preparedStatement = null;
+        String query = "UPDATE employee SET password=? where username =?";
+        try {
+
+            preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setString(1, password);
+            preparedStatement.setString(2, username);
+            preparedStatement.executeUpdate();
+
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
     }
 }

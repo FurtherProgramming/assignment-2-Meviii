@@ -8,8 +8,10 @@ import javafx.scene.Group;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ColorPicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import main.User;
 import main.UserHolder;
@@ -66,15 +68,17 @@ public class EmployeeBookingController {
             e.printStackTrace();
         }
     }
+    final ColorPicker colorPicker = new ColorPicker();
 
     @FXML
     private Button btnSeat1;
     public void Seat1(ActionEvent event){
 
         try{
+
             if (ebm.isCheckUser(username)){
 
-            }else if(btnSeat1.getStyle() == "red"){
+            }else if(btnSeat1.getStyle() == "-fx-background-color: green"){
                 btnSeat1.setStyle("-fx-background-color: red");
             }else{
                 System.out.println("NEITHER");
