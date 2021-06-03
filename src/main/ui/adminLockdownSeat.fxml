@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="394.0" prefWidth="360.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.controller.AdminLockdownSeatController">
+
+    <children>
+        <Label layoutX="118.0" prefHeight="147.0" prefWidth="179.0" text="LOCKDOWN" textAlignment="CENTER" wrapText="true">
+            <font>
+                <Font name="System Bold" size="22.0" />
+            </font>
+        </Label>
+        <Button fx:id="btnLockdown" layoutX="181.0" layoutY="214.0" mnemonicParsing="false" onAction="#Lockdown" prefHeight="25.0" prefWidth="72.0" text="Lockdown" />
+
+        <Button fx:id="btnAdminLockdownToHomePanel" layoutX="315.0" layoutY="4.0" mnemonicParsing="false" onAction="#AdminLockdownToHomePanel" text="Back" />
+        <TextField fx:id="txtSeatNum" layoutX="106.0" layoutY="173.0" promptText="Seat Number" />
+        <Label fx:id="lblStatus" layoutX="106.0" layoutY="214.0" prefHeight="25.0" prefWidth="72.0" text="Status" />
+    </children>
+
+</AnchorPane>

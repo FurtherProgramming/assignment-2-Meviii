@@ -38,7 +38,10 @@ EMPLOYEE BOOKING:
 ![img_4.png](img_4.png)
 
 Bugs:
-- Know bugs
+- When locking down a seat, the first seat that gets locked down
+functions correctly and becomes locked however when entering a new
+  seat to lock on the same scene, it adds the first seats boolean from
+  1 -> 2.
 
 
 

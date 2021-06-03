@@ -31,6 +31,20 @@ public class AdminPanelController {
     }
 
     @FXML
+    private Button btnAdminPanelToLockdown;
+    public void AdminPanelToLockdown(ActionEvent event) throws IOException {
+        FXMLLoader load = new FXMLLoader();
+        String address = "src/main/ui/adminLockdownSeat.fxml";
+        InputStream fxmlStream = new FileInputStream(address);
+        Parent root = load.load(fxmlStream);
+
+
+        Stage stage = (Stage) btnAdminPanelToLockdown.getScene().getWindow();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+    }
+
+    @FXML
     private Button btnAdminPanelToManagement;
     public void AdminPanelToManagement(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader();

@@ -50,7 +50,7 @@ public class EmployeeManageBookingModel {
     public void isRemoveBooking(String username) throws SQLException{
         PreparedStatement preparedStatement = null;
         ResultSet rs = null;
-        String query = "delete from booking where username = ?";
+        String query = "UPDATE booking set username = null, date = null where username = ?";
 
         try{
             preparedStatement = connection.prepareStatement(query);
