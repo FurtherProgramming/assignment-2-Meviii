@@ -71,14 +71,13 @@ public class EmployeeBookingController {
     final ColorPicker colorPicker = new ColorPicker();
 
     @FXML
-    private Button btnSeat1;
+    private Button btnSeat1, btnTestGreen, btnTestRed, btnTestOrange;
     public void Seat1(ActionEvent event){
-
         try{
-
+            Color c = colorPicker.getValue();
             if (ebm.isCheckUser(username)){
 
-            }else if(btnSeat1.getStyle() == "-fx-background-color: green"){
+            }else if(btnSeat1.getStyle() == btnTestGreen.getStyle()){
                 btnSeat1.setStyle("-fx-background-color: red");
             }else{
                 System.out.println("NEITHER");

@@ -1,0 +1,4 @@
+seatNum  ||  status ||  lockdown  ||  date  ||  username  
+"1", vacant, false, 20/02/2000, test
+"2", vacant, false, 20/02/2001, test2
+"3", vacant, false, 20/02/2002, test3

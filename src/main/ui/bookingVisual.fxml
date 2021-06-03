@@ -8,7 +8,7 @@
       <Button layoutX="23.0" layoutY="369.0" mnemonicParsing="false" onAction="#Seat7" prefHeight="50.0" prefWidth="70.0" rotate="90.0" style="-fx-background-color: red;" />
       <Button layoutX="23.0" layoutY="461.0" mnemonicParsing="false" onAction="#Seat10" prefHeight="50.0" prefWidth="70.0" rotate="90.0" style="-fx-background-color: lightgreen;" />
       <Button layoutX="23.0" layoutY="556.0" mnemonicParsing="false" onAction="#Seat12" prefHeight="50.0" prefWidth="70.0" rotate="90.0" style="-fx-background-color: red;" />
-      <Button fx:id="btnSeat1" layoutX="35.0" layoutY="14.0" mnemonicParsing="false" onAction="#Seat1" prefHeight="50.0" prefWidth="70.0" style="-fx-background-color: lightgreen;" stylesheets="@../css.css" />
+      <Button fx:id="btnSeat1" layoutX="35.0" layoutY="14.0" mnemonicParsing="false" onAction="#Seat1" prefHeight="50.0" prefWidth="70.0" style="-fx-background-color: lightgreen;" />
       <Button layoutX="24.0" layoutY="185.0" mnemonicParsing="false" onAction="#Seat3" prefHeight="50.0" prefWidth="70.0" rotate="90.0" style="-fx-background-color: red;" />
       <Button layoutX="187.0" layoutY="14.0" mnemonicParsing="false" onAction="#Seat2" prefHeight="50.0" prefWidth="70.0" style="-fx-background-color: red;" />
       <Button layoutX="24.0" layoutY="277.0" mnemonicParsing="false" onAction="#Seat5" prefHeight="50.0" prefWidth="70.0" rotate="90.0" style="-fx-background-color: lightgreen;" />
@@ -21,5 +21,9 @@
       <Button layoutX="152.0" layoutY="575.0" mnemonicParsing="false" onAction="#Seat13" prefHeight="50.0" prefWidth="70.0" style="-fx-background-color: lightgreen;" />
       <Button layoutX="245.0" layoutY="575.0" mnemonicParsing="false" onAction="#Seat14" prefHeight="50.0" prefWidth="70.0" style="-fx-background-color: red;" />
       <Button layoutX="337.0" layoutY="575.0" mnemonicParsing="false" onAction="#Seat15" prefHeight="50.0" prefWidth="70.0" style="-fx-background-color: lightgreen;" />
+      <AnchorPane layoutX="354.0" prefHeight="200.0" prefWidth="200.0" />
+      <Button fx:id="btnTestGreen" layoutX="126.0" layoutY="347.0" mnemonicParsing="false" style="-fx-background-color: lightgreen;" text="Button" />
+      <Button fx:id="btnTestOrange" layoutX="126.0" layoutY="397.0" mnemonicParsing="false" style="-fx-background-color: orange;" text="Button" />
+      <Button fx:id="btnTestRed" layoutX="126.0" layoutY="452.0" mnemonicParsing="false" style="-fx-background-color: red;" text="Button" />
    </children>
 </AnchorPane>
