@@ -27,7 +27,7 @@ public class EmployeePanelController implements Initializable {
     private Button btnStaffToBooking;
     public void StaffToBooking(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader();
-        String address = "src/main/ui/bookingVisual.fxml";
+        String address = "src/main/ui/employeeBooking.fxml";
         InputStream fxmlStream = new FileInputStream(address);
         Parent root = loader.load(fxmlStream);
 

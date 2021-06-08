@@ -3,6 +3,7 @@ package main.model;
 import main.SQLConnection;
 
 import java.sql.*;
+import java.util.Calendar;
 
 public class EmployeeBookingModel {
     Connection connection;
@@ -41,16 +42,49 @@ public class EmployeeBookingModel {
         }
     }
 
-
-    public void isBooking(String date, String username, String status) throws SQLException {
+    public Boolean isBookingNotNull(int seatNum) throws SQLException{
         PreparedStatement preparedStatement = null;
-        String query = "insert into booking (date, username, status) VALUES (?,?,?)";
+        ResultSet resultSet=null;
+        String query = "select * from booking where status is not null and seatNum = ?";
+        try {
+
+            preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setInt(1, seatNum);
+
+            resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()) {
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+        catch (Exception e)
+        {
+            return false;
+        }finally {
+            preparedStatement.close();
+            resultSet.close();
+        }
+    }
+
+
+    public void isBooking(String date, String username, String status, int seatNum) throws SQLException {
+        PreparedStatement preparedStatement = null;
+        Calendar calendar = Calendar.getInstance();
+        Timestamp ts = new Timestamp(calendar.getTime().getTime());
+        Date dte = new Date(ts.getTime());
+
+        String sql = "insert into booking (date, username, status, TIMESTAMP(NOW()) as timestamp) VALUES (?,?,?)";
+        String query = "UPDATE booking SET date = ?, username = ?, status = ?, timestamp = ? where seatnum = ?";
         try {
 
             preparedStatement = connection.prepareStatement(query);
             preparedStatement.setString(1, date);
             preparedStatement.setString(2, username);
             preparedStatement.setString(3, status);
+            preparedStatement.setDate(4, dte);
+            preparedStatement.setInt(5, seatNum);
 
             preparedStatement.executeUpdate();
 
@@ -109,6 +143,27 @@ public class EmployeeBookingModel {
         }finally {
             preparedStatement.close();
             resultSet.close();
+        }
+    }
+
+    public String isCurrentlyLockdown(String username){
+        String sql = "select lockdown from booking where username = ?";
+        ResultSet rs = null;
+        PreparedStatement preparedStatement = null;
+        try{
+            preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1, username);
+
+            rs = preparedStatement.executeQuery();
+
+            if(rs.next()){
+                return rs.getString("lockdown");
+            }else{
+                return null;
+            }
+        }catch (SQLException e){
+            e.printStackTrace();
+            return null;
         }
     }
 

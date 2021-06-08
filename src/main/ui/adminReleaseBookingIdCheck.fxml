@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="394.0" prefWidth="360.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.controller.AdminReleaseBookingIdCheckController">
+    <children>
+        <Button fx:id="btnIdCheckToAdminPanel" layoutX="315.0" layoutY="4.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#IdCheckToAdminPanel" text="Back" />
+        <Label layoutX="86.0" layoutY="4.0" prefHeight="164.0" prefWidth="202.0" text="BOOKING CHECK" textAlignment="CENTER" textOverrun="CLIP" wrapText="true">
+            <font>
+                <Font name="System Bold" size="22.0" />
+            </font>
+        </Label>
+        <Button fx:id="btnIdCheckToReleaseBooking" layoutX="197.0" layoutY="207.0" mnemonicParsing="false" onAction="#IdCheckToReleaseBooking" text="Check" />
+        <TextField fx:id="txtUsername" layoutX="114.0" layoutY="168.0" prefHeight="32.0" prefWidth="132.0" promptText="EMPLOYEE USER" />
+        <Label fx:id="lblStatus" layoutX="114.0" layoutY="207.0" prefHeight="25.0" prefWidth="72.0" text="Status" />
+    </children>
+
+</AnchorPane>

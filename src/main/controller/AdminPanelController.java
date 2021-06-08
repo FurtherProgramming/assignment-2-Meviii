@@ -43,6 +43,19 @@ public class AdminPanelController {
         Scene scene = new Scene(root);
         stage.setScene(scene);
     }
+    @FXML
+    private Button btnAdminPanelToReleaseBooking;
+    public void AdminPanelToReleaseBooking(ActionEvent event) throws IOException {
+        FXMLLoader load = new FXMLLoader();
+        String address = "src/main/ui/adminReleaseBookingIdCheck.fxml";
+        InputStream fxmlStream = new FileInputStream(address);
+        Parent root = load.load(fxmlStream);
+
+
+        Stage stage = (Stage) btnAdminPanelToReleaseBooking.getScene().getWindow();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+    }
 
     @FXML
     private Button btnAdminPanelToManagement;

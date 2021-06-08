@@ -1,17 +1,13 @@
 package main.controller;
 
-import com.sun.javafx.css.Style;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Group;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.ColorPicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import main.User;
 import main.UserHolder;
@@ -48,15 +44,24 @@ public class EmployeeBookingController {
     private TextField txtBookingDate;
     @FXML
     private Label labelBookingStatus;
+    @FXML
+    private TextField txtSeatNum;
+    @FXML
+    private Label labelBookingStatus2;
     public void BookingBook(ActionEvent event) throws SQLException{
         try{
 
             if (ebm.checkBooking(username)) {
                 labelBookingStatus.setText("Already Booked");
             }else if (ebm.isCheckUser(username)) {
-                    if (!txtBookingDate.getText().isEmpty()) {
-                        ebm.isBooking(txtBookingDate.getText(), username, "Awaiting Confirmation");
-                        labelBookingStatus.setText("SeatNum: " + ebm.isSeatNum(username));
+                    if (!txtBookingDate.getText().isEmpty() && !txtSeatNum.getText().isEmpty()) {
+                        if (ebm.isBookingNotNull(Integer.parseInt(txtSeatNum.getText()))){
+                            labelBookingStatus.setText("Not Vacant");
+                        }else {
+                            ebm.isBooking(txtBookingDate.getText(), username, "Awaiting Confirmation", Integer.parseInt(txtSeatNum.getText()));
+                            labelBookingStatus.setText("SeatNum: " + ebm.isSeatNum(username));
+                            labelBookingStatus2.setText("Awaiting Confirmation");
+                        }
                     } else {
                         labelBookingStatus.setText("Incorrect Details");
                     }
@@ -68,77 +73,6 @@ public class EmployeeBookingController {
             e.printStackTrace();
         }
     }
-    final ColorPicker colorPicker = new ColorPicker();
-
-    @FXML
-    private Button btnSeat1, btnTestGreen, btnTestRed, btnTestOrange;
-    public void Seat1(ActionEvent event){
-        try{
-            Color c = colorPicker.getValue();
-            if (ebm.isCheckUser(username)){
-
-            }else if(btnSeat1.getStyle() == btnTestGreen.getStyle()){
-                btnSeat1.setStyle("-fx-background-color: red");
-            }else{
-                System.out.println("NEITHER");
-            }
-
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-
-    }
-    public void Seat2(ActionEvent event){
-
-    }
-    public void Seat3(ActionEvent event){
-
-    }
-    public void Seat4(ActionEvent event){
-
-    }
-    public void Seat5(ActionEvent event){
-
-    }
-    public void Seat6(ActionEvent event){
-
-    }
-    public void Seat7(ActionEvent event){
-
-    }
-    public void Seat8(ActionEvent event){
-
-    }
-    public void Seat9(ActionEvent event){
-
-    }
-    public void Seat10(ActionEvent event){
-
-    }
-    public void Seat11(ActionEvent event){
-
-    }
-    public void Seat12(ActionEvent event){
-
-    }
-    public void Seat13(ActionEvent event){
-
-    }
-    public void Seat14(ActionEvent event){
-
-    }
-    public void Seat15(ActionEvent event){
-
-    }
-    public void Seat16(ActionEvent event){
-
-    }
-
-
-
-
-
-
 
 
 }
