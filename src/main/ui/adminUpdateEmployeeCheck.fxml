@@ -14,7 +14,7 @@
         </Label>
         <TextField fx:id="txtUsername" layoutX="110.0" layoutY="167.0" prefHeight="32.0" prefWidth="141.0" promptText="EMPLOYEE USERNAME" />
         <Button fx:id="btnCheckToEmployeeUpdateDetails" layoutX="193.0" layoutY="206.0" mnemonicParsing="false" onAction="#Check" prefHeight="25.0" prefWidth="58.0" text="Check" />
-      <Label fx:id="lblStatus" layoutX="114.0" layoutY="206.0" prefHeight="25.0" prefWidth="68.0" />
+      <Label fx:id="lblStatus" layoutX="114.0" layoutY="206.0" prefHeight="25.0" prefWidth="74.0" />
     </children>
 
 </AnchorPane>

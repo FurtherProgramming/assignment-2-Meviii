@@ -3,6 +3,7 @@ package main.model;
 import main.SQLConnection;
 
 import java.sql.*;
+import java.time.Instant;
 import java.util.Calendar;
 
 public class EmployeeBookingModel {
@@ -75,8 +76,7 @@ public class EmployeeBookingModel {
         Timestamp ts = new Timestamp(calendar.getTime().getTime());
         Date dte = new Date(ts.getTime());
 
-        String sql = "insert into booking (date, username, status, TIMESTAMP(NOW()) as timestamp) VALUES (?,?,?)";
-        String query = "UPDATE booking SET date = ?, username = ?, status = ?, timestamp = ? where seatnum = ?";
+        String query = "UPDATE booking SET date = ?, username = ?, status = ?, timestamp = (DATETIME(ROUND(? / 1000), 'unixepoch')) where seatnum = ?";
         try {
 
             preparedStatement = connection.prepareStatement(query);

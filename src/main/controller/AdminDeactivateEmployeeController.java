@@ -12,7 +12,6 @@ import javafx.stage.Stage;
 import main.model.AdminDeactivateEmployeeModel;
 
 import java.io.FileInputStream;
-import java.io.IOException;
 import java.io.InputStream;
 import java.sql.SQLException;
 
@@ -20,16 +19,20 @@ public class AdminDeactivateEmployeeController {
     AdminDeactivateEmployeeModel ade = new AdminDeactivateEmployeeModel();
     @FXML
     private Button btnDeactivateEmpToManageEmp;
-    public void DeactivateEmpToManageEmp(ActionEvent event) throws IOException {
+    public void DeactivateEmpToManageEmp(ActionEvent event) {
 
-        FXMLLoader loader = new FXMLLoader();
-        String address = "src/main/ui/adminManageEmployee.fxml";
-        InputStream fxmlStream = new FileInputStream(address);
-        Parent root = loader.load(fxmlStream);
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            String address = "src/main/ui/adminManageEmployee.fxml";
+            InputStream fxmlStream = new FileInputStream(address);
+            Parent root = loader.load(fxmlStream);
 
-        Stage stage = (Stage) btnDeactivateEmpToManageEmp.getScene().getWindow();
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
+            Stage stage = (Stage) btnDeactivateEmpToManageEmp.getScene().getWindow();
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
 
     }
     @FXML

@@ -6,16 +6,16 @@
 
 <AnchorPane prefHeight="394.0" prefWidth="360.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.controller.AdminReleaseBookingController">
     <children>
-        <Label layoutX="91.0" layoutY="14.0" prefHeight="147.0" prefWidth="205.0" text="BOOKING STATUS" wrapText="true">
+        <Label layoutX="85.0" layoutY="14.0" prefHeight="147.0" prefWidth="205.0" text="BOOKING STATUS" wrapText="true">
             <font>
                 <Font name="System Bold" size="22.0" />
             </font>
         </Label>
         <Button fx:id="btnReleaseBookingToAdminPanel" layoutX="315.0" layoutY="4.0" mnemonicParsing="false" onAction="#ReleaseBookingToAdminPanel" text="Back" />
-        <Button fx:id="btnAcceptBooking" layoutX="204.0" layoutY="237.0" mnemonicParsing="false" onAction="#AcceptBooking" text="Accept" />
-        <Label fx:id="lblBookingStatus" layoutX="82.0" layoutY="146.0" prefHeight="77.0" prefWidth="231.0" text="          BOOKING INFORMATION" />
+        <Button fx:id="btnAcceptBooking" layoutX="187.0" layoutY="237.0" mnemonicParsing="false" onAction="#AcceptBooking" text="Accept" />
+        <Label fx:id="lblBookingStatus" layoutX="16.0" layoutY="143.0" prefHeight="77.0" prefWidth="342.0" />
         <Label fx:id="lblStatus" layoutX="140.0" layoutY="276.0" prefHeight="19.0" prefWidth="99.0" />
-      <Button fx:id="btnDeclineBooking" layoutX="103.0" layoutY="237.0" mnemonicParsing="false" onAction="#DeclineBooking" text="Decline" />
+      <Button fx:id="btnDeclineBooking" layoutX="124.0" layoutY="237.0" mnemonicParsing="false" onAction="#DeclineBooking" text="Decline" />
     </children>
 
 </AnchorPane>

@@ -57,7 +57,7 @@ public class AdminLockdownSeatModel {
     public void isRemoveBooking(String seatnum) throws SQLException{
         PreparedStatement preparedStatement = null;
         ResultSet rs = null;
-        String query = "UPDATE booking set username = null, date = null, status = 'locked' where seatnum = ?";
+        String query = "UPDATE booking set username = null, date = null, timestamp = null, status = 'locked' where seatnum = ?";
 
         try{
             preparedStatement = c.prepareStatement(query);

@@ -79,7 +79,7 @@ public class AdminUpdateEmployeeDetailsModel {
 
             resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
-                for (i = 1; i <= 7; i++){
+                for (i = 1; i <= 8; i++){
                     ret += resultSet.getString(i) + "  |  ";
                 }
             }

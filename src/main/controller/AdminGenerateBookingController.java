@@ -29,18 +29,20 @@ public class AdminGenerateBookingController implements Initializable {
     private Button btnGenerateBookingToReports;
     public void GenerateBookingToReports(ActionEvent event) throws IOException {
 
-        FXMLLoader loader = new FXMLLoader();
-        String address = "src/main/ui/adminGenerateReports.fxml";
-        InputStream fxmlStream = new FileInputStream(address);
-        Parent root = loader.load(fxmlStream);
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            String address = "src/main/ui/adminGenerateReports.fxml";
+            InputStream fxmlStream = new FileInputStream(address);
+            Parent root = loader.load(fxmlStream);
 
-        Stage stage = (Stage) btnGenerateBookingToReports.getScene().getWindow();
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-
+            Stage stage = (Stage) btnGenerateBookingToReports.getScene().getWindow();
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
-    @FXML
-    private TextField txtUsername;
+
     @FXML
     private Label txtIfGenerated;
     public void Generate(ActionEvent event){

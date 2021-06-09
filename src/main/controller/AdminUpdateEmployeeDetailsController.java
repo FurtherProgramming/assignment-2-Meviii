@@ -44,7 +44,7 @@ public class AdminUpdateEmployeeDetailsController implements Initializable {
     private Label lblStatus;
     @FXML
     private TextField txtName, txtSurname, txtAge, txtUsername, txtPassword, txtSecretQuestion, txtSecretAnswer;
-    public void Update(ActionEvent event) throws SQLException{
+    public void Update(ActionEvent event) throws Exception{
         try{
             Boolean txtNameEmpty = txtName.getText().isEmpty();
             Boolean txtSurnameEmpty = txtSurname.getText().isEmpty();
@@ -75,7 +75,7 @@ public class AdminUpdateEmployeeDetailsController implements Initializable {
     public void EmpUpdDetailToUserCheck(ActionEvent event) throws IOException {
 
         FXMLLoader loader = new FXMLLoader();
-        String address = "src/main/ui/adminUpdateEmployeeDetails.fxml";
+        String address = "src/main/ui/adminUpdateEmployeeCheck.fxml";
         InputStream fxmlStream = new FileInputStream(address);
         Parent root = loader.load(fxmlStream);
 

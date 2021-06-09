@@ -42,7 +42,7 @@ public class AdminUpdateEmployeeCheckController {
     private Button btnCheckToEmployeeUpdateDetails;
     @FXML
     private Label lblStatus;
-    public void Check(ActionEvent event){
+    public void Check(ActionEvent event) throws IOException{
         try{
             if (uec.isCheckUser(txtUsername.getText())) {
                 User u = new User(txtUsername.getText());
@@ -60,8 +60,7 @@ public class AdminUpdateEmployeeCheckController {
             }else{
                 lblStatus.setText("Not found");
             }
-
-        }catch (Exception e){
+        }catch (SQLException e){
             e.printStackTrace();
         }
 

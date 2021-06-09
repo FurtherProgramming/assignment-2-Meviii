@@ -38,7 +38,7 @@ public class AdminReleaseBookingController implements Initializable {
                 lblBookingStatus.setText(arb.isCheckBooking(username));
             }
 
-        } catch (Exception e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
     }
@@ -46,9 +46,6 @@ public class AdminReleaseBookingController implements Initializable {
     @FXML
     private Label lblStatus;
     public void AcceptBooking() throws SQLException {
-        // check booking else no booking
-        // isAcceptBooking -> change to confirmed
-        // else error
         try {
             if (arb.isCheckBooking(username).isEmpty()){
                 lblStatus.setText("No Booking");
@@ -57,25 +54,19 @@ public class AdminReleaseBookingController implements Initializable {
                 lblStatus.setText("Confirmed");
                 arb.isPrevSeat(Integer.parseInt(arb.isSeatNum(username)), username);
             }
-
         }catch(SQLException e){
             e.printStackTrace();
         }
-
     }
 
     public void DeclineBooking(){
-        // check booking else no booking
-        // isDeclineBooking -> cancel booking
-        // else error
         try {
             if (arb.isCheckBooking(username).isEmpty()){
                 lblStatus.setText("No Booking");
-            }else{
+            }else if (!arb.isCheckBooking(username).isEmpty()){
                 arb.isDeclineBooking(username);
                 lblStatus.setText("Declined");
             }
-
         }catch(SQLException e){
             e.printStackTrace();
         }

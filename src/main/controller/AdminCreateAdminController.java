@@ -3,7 +3,6 @@ package main.controller;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -11,53 +10,38 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import main.model.AdminCreateAdminModel;
-import main.model.EmployeeRegisterModel;
 
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.URL;
 import java.sql.SQLException;
-import java.util.ResourceBundle;
 
-public class AdminCreateAdminController implements Initializable {
+
+public class AdminCreateAdminController{
     AdminCreateAdminModel aca = new AdminCreateAdminModel();
-
-    @Override
-    public void initialize(URL location, ResourceBundle resources){
-    }
 
     @FXML
     private Button btnCreateAdminToAdminManagement;
-    public void CreateAdminToAdminManagement(ActionEvent event) throws IOException {
+    public void CreateAdminToAdminManagement(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            String address = "src/main/ui/adminManagement.fxml";
+            InputStream fxmlStream = new FileInputStream(address);
+            Parent root = loader.load(fxmlStream);
 
-        FXMLLoader loader = new FXMLLoader();
-        String address = "src/main/ui/adminManagement.fxml";
-        InputStream fxmlStream = new FileInputStream(address);
-        Parent root = loader.load(fxmlStream);
-
-        Stage stage = (Stage) btnCreateAdminToAdminManagement.getScene().getWindow();
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-
+            Stage stage = (Stage) btnCreateAdminToAdminManagement.getScene().getWindow();
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
+
     @FXML
-    private TextField txtAdminName;
-    @FXML
-    private TextField txtAdminSurname;
-    @FXML
-    private TextField txtAdminAge;
-    @FXML
-    private TextField txtAdminUsername;
-    @FXML
-    private TextField txtAdminPassword;
-    @FXML
-    private TextField txtAdminSecretQuestion;
-    @FXML
-    private TextField txtAdminSecretAnswer;
+    private TextField txtAdminName, txtAdminSurname, txtAdminAge, txtAdminUsername, txtAdminPassword, txtAdminSecretQuestion, txtAdminSecretAnswer;
     @FXML
     private Label labelAdminCreateAdmin;
-    public void Create(ActionEvent event) throws SQLException {
+    public void Create(ActionEvent event) {
         try {
             Boolean regNameIsEmpty = txtAdminName.getText().isEmpty();
             Boolean regSurnameIsEmpty = txtAdminSurname.getText().isEmpty();
@@ -80,7 +64,6 @@ public class AdminCreateAdminController implements Initializable {
         }catch(SQLException e){
             e.printStackTrace();
         }
-
     }
 
 }

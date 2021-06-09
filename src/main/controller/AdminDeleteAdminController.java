@@ -31,14 +31,18 @@ public class AdminDeleteAdminController implements Initializable {
     private Button btnDeleteAdminToAdminManagement;
     public void DeleteAdminToAdminManagement(ActionEvent event) throws IOException {
 
-        FXMLLoader loader = new FXMLLoader();
-        String address = "src/main/ui/adminManagement.fxml";
-        InputStream fxmlStream = new FileInputStream(address);
-        Parent root = loader.load(fxmlStream);
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            String address = "src/main/ui/adminManagement.fxml";
+            InputStream fxmlStream = new FileInputStream(address);
+            Parent root = loader.load(fxmlStream);
 
-        Stage stage = (Stage) btnDeleteAdminToAdminManagement.getScene().getWindow();
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
+            Stage stage = (Stage) btnDeleteAdminToAdminManagement.getScene().getWindow();
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
 
     }
 

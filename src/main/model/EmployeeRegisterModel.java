@@ -19,15 +19,6 @@ public class EmployeeRegisterModel {
 
     }
 
-    public Boolean isDbConnected(){
-        try {
-            return !connection.isClosed();
-        }
-        catch(Exception e){
-            return false;
-        }
-    }
-
     public void isRegister(String name, String surname, String age, String username, String password, String secret_question, String secret_answer) throws SQLException {
 
             String query = "INSERT INTO employee(name , surname, age, username, password, secret_question, secret_answer) VALUES (?,?,?,?,?,?,?)";

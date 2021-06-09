@@ -20,15 +20,6 @@ public class ForgotPasswordModel {
 
     }
 
-    public Boolean isDbConnected(){
-        try {
-            return !connection.isClosed();
-        }
-        catch(Exception e){
-            return false;
-        }
-    }
-
     public String isSecretQuestion(String username) throws SQLException{
         String query = "select secret_question from employee where username = ?";
         ResultSet rs = null;
@@ -45,7 +36,7 @@ public class ForgotPasswordModel {
                 return null;
             }
 
-        }catch(SQLException e){
+        }catch(Exception e){
             e.printStackTrace();
             return null;
         }

@@ -24,7 +24,7 @@ import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class ForgotPasswordController{
-    public ForgotPasswordModel fpm = new ForgotPasswordModel();
+    ForgotPasswordModel fpm = new ForgotPasswordModel();
 
     @FXML
     private Button btnForgPassToMainLogin;
@@ -69,15 +69,4 @@ public class ForgotPasswordController{
             e.printStackTrace();
         }
     }
-    /*@FXML
-    private Label txtForgPassSecreQuestion;
-    public void ForgPassUpdate(ActionEvent event) throws IOException{
-        try{
-
-        }catch (SQLException e){
-            e.printStackTrace();
-        }
-
-    }*/
-
 }

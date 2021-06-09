@@ -7,6 +7,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import main.model.AdminDeleteAdminModel;
 import main.model.AdminWhitelistModel;
@@ -15,6 +17,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class AdminWhitelistController implements Initializable {
@@ -39,11 +42,22 @@ public class AdminWhitelistController implements Initializable {
 
     }
 
-    public void Whitelist(ActionEvent event) throws IOException{
-        //checkuser
-        //changewhitelist(for rebooking same seat)
-        if (awm.isCheckUser(txtUsername().getText)){
-
+    @FXML
+    private TextField txtUsername;
+    @FXML
+    private Label lblStatus;
+    public void Whitelist(ActionEvent event){
+        try {
+            if (awm.isCheckUser(txtUsername.getText())) {
+                awm.isWhitelist(txtUsername.getText());
+                lblStatus.setText("Whitelisted");
+            }else if (!awm.isCheckUser(txtUsername.getText())){
+                lblStatus.setText("No User");
+            }else{
+                lblStatus.setText("Error");
+            }
+        }catch (SQLException e){
+            e.printStackTrace();
         }
 
     }

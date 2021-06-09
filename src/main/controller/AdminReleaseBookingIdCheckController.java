@@ -27,8 +27,7 @@ public class AdminReleaseBookingIdCheckController {
     private TextField txtUsername;
     @FXML
     private Label lblStatus;
-
-    public void IdCheckToReleaseBooking(ActionEvent event) throws IOException, SQLException {
+    public void IdCheckToReleaseBooking(ActionEvent event) throws IOException {
         try {
             if (arb.isCheckUser(txtUsername.getText()) && !txtUsername.getText().isEmpty()) {
                 User u = new User(txtUsername.getText());

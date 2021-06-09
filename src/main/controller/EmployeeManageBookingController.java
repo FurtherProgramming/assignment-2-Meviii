@@ -33,18 +33,13 @@ public class EmployeeManageBookingController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources){
 
-        /*UserHolder holder = UserHolder.getInstance();
-        User u = holder.getUser();
-        String username = u.getUsername();*/
-
         try {
             if(emb.isCheckBooking(username).isEmpty()){
                 labelAccManagBookingInfo.setText("            No Current Booking");
             }else{
                 labelAccManagBookingInfo.setText(emb.isCheckBooking(username));
             }
-
-        } catch (Exception e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
     }
@@ -64,13 +59,11 @@ public class EmployeeManageBookingController implements Initializable {
     }
     @FXML
     private Label lblBookingCancelText;
-    public void AccManagCancelBooking(ActionEvent event) {
+    public void AccManagCancelBooking(ActionEvent event) throws Exception{
         try{
-                emb.isRemoveBooking(username);
-                lblBookingCancelText.setText("Booking Cancelled");
-
-
-        }catch (Exception e){
+            emb.isRemoveBooking(username);
+            lblBookingCancelText.setText("Booking Cancelled");
+        }catch (SQLException e){
             e.printStackTrace();
         }
     }

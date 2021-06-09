@@ -42,19 +42,7 @@ public class EmployeeRegisterController implements Initializable {
 
     }
     @FXML
-    private TextField txtRegName;
-    @FXML
-    private TextField txtRegSurname;
-    @FXML
-    private TextField txtRegAge;
-    @FXML
-    private TextField txtRegUsername;
-    @FXML
-    private TextField txtRegPassword;
-    @FXML
-    private TextField txtRegSecretQuestion;
-    @FXML
-    private TextField txtRegSecretAnswer;
+    private TextField txtRegName, txtRegSurname, txtRegAge, txtRegUsername, txtRegPassword, txtRegSecretQuestion, txtRegSecretAnswer;
     @FXML
     private Label labelRegisterEmployee;
     public void Register(ActionEvent event) throws SQLException {

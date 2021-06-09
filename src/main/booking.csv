@@ -1,4 +1,17 @@
 seatNum  ||  status ||  lockdown  ||  date  ||  username  
-"1", vacant, false, 20/02/2000, test
-"2", vacant, false, 20/02/2001, test2
-"3", vacant, false, 20/02/2002, test3
+"1", Awaiting Confirmation, false, 21312312, test12
+"2", Awaiting Confirmation, false, 123123123, test14
+"3", locked, false, null, null
+"4", Awaiting Confirmation, false, 20/02/2021, test1
+"5", vacant, false, null, null
+"6", vacant, false, null, null
+"7", vacant, false, null, null
+"8", vacant, false, null, null
+"9", vacant, false, null, null
+"a", vacant, false, null, null
+"b", vacant, false, null, null
+"c", vacant, false, null, null
+"d", vacant, false, null, null
+"e", vacant, false, null, null
+"f", vacant, false, null, null
+"10", vacant, false, null, null

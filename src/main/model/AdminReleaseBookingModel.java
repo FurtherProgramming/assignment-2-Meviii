@@ -33,7 +33,7 @@ public class AdminReleaseBookingModel {
 
             resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
-                for (i = 1; i <= 3; i++){
+                for (i = 1; i <= 4; i++){
                     ret += resultSet.getString(i) + "   ";
                 }
             }

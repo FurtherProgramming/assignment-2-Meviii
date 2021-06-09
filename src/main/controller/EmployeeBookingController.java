@@ -26,9 +26,6 @@ public class EmployeeBookingController {
 
     @FXML
     private Button btnBackEmployeePanel;
-    @FXML
-    private Label lblBookingUserDisplay;
-
     public void BackToMainEmployeePanel(ActionEvent event) throws IOException {
         FXMLLoader load = new FXMLLoader();
         String address = "src/main/ui/employeePanel.fxml";
@@ -48,12 +45,8 @@ public class EmployeeBookingController {
     private TextField txtSeatNum;
     @FXML
     private Label labelBookingStatus2;
-    public void BookingBook(ActionEvent event) throws SQLException{
+    public void BookingBook(ActionEvent event) throws Exception{
         try{
-            // Check Booking
-            // Check Prev seat == new Seat
-            // if so, error
-
             if (ebm.checkBooking(username)) {
                 labelBookingStatus.setText("");
                 labelBookingStatus2.setText("Already Booked");
@@ -76,7 +69,6 @@ public class EmployeeBookingController {
                 } else {
                     labelBookingStatus.setText("Wrong User");
                 }
-
         }catch (SQLException e){
             e.printStackTrace();
         }

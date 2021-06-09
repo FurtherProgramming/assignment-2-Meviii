@@ -37,17 +37,12 @@ public class EmployeeManageAccountController {
         Scene scene = new Scene(root);
         stage.setScene(scene);
     }
-    //GETuser
-    //input is empty/notempty
-    //check curr pass = pass (isPass)
-    //check new pass= curr pass
-    //update details (isUpdate)
 
     @FXML
     private TextField txtName, txtSurname, txtAge, txtCurrPass, txtNewPass, txtSQuestion, txtSAnswer;
     @FXML
     private Label lblStatus;
-    public void Update(ActionEvent event) throws SQLException {
+    public void Update(ActionEvent event) throws Exception {
         try {
             if (!(txtName.getText().isEmpty() || txtSurname.getText().isEmpty() || txtAge.getText().isEmpty() || txtCurrPass.getText().isEmpty() || txtNewPass.getText().isEmpty() || txtSQuestion.getText().isEmpty() || txtSAnswer.getText().isEmpty())) {
                 if (txtCurrPass.getText().equals(ema.isPassword(username))) {

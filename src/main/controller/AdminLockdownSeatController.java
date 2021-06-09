@@ -22,14 +22,18 @@ public class AdminLockdownSeatController {
     private Button btnAdminLockdownToHomePanel;
     public void AdminLockdownToHomePanel(ActionEvent event) throws IOException {
 
-        FXMLLoader loader = new FXMLLoader();
-        String address = "src/main/ui/adminPanel.fxml";
-        InputStream fxmlStream = new FileInputStream(address);
-        Parent root = loader.load(fxmlStream);
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            String address = "src/main/ui/adminPanel.fxml";
+            InputStream fxmlStream = new FileInputStream(address);
+            Parent root = loader.load(fxmlStream);
 
-        Stage stage = (Stage) btnAdminLockdownToHomePanel.getScene().getWindow();
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
+            Stage stage = (Stage) btnAdminLockdownToHomePanel.getScene().getWindow();
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
 
     }
 

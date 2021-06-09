@@ -49,9 +49,6 @@ public class LoginController implements Initializable {
         }
 
     }
-    /* login Action method
-       check if user input is the same as database.
-     */
 
     public void Login(ActionEvent event) throws IOException {
 
@@ -108,7 +105,7 @@ public class LoginController implements Initializable {
 
     }
 
-    public void RegisterButtonPushed(ActionEvent event) throws IOException{
+    public void Register(ActionEvent event) throws IOException{
         FXMLLoader loader = new FXMLLoader();
         String address = "src/main/ui/employeeRegister.fxml";
         InputStream fxmlStream = new FileInputStream(address);
@@ -119,12 +116,4 @@ public class LoginController implements Initializable {
         stage.setScene(scene);
 
     }
-
-
-
-
-    //11.2.3 big sur
-
-
-
 }

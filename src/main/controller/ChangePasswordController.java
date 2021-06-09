@@ -36,14 +36,14 @@ public class ChangePasswordController implements Initializable {
 
         try {
             lblForgPassSecreQuestion.setText(fpm.isSecretQuestion(username));
-        } catch (Exception e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
     }
 
     String chars = "abcdefghijklmnopqrstuvwxyz1234567890";
-    public static String RandomPass(String chars, int length)
-    {
+    public static String RandomPass(String chars, int length) {
+
         Random randomize = new Random();
         StringBuilder builder = new StringBuilder();
 
@@ -60,7 +60,7 @@ public class ChangePasswordController implements Initializable {
     private Label labelUpdateStatus;
     @FXML
     private Label lblNewPass;
-    public void UpdatePassword(ActionEvent event) throws SQLException {
+    public void UpdatePassword(ActionEvent event) throws Exception {
         String newPass = RandomPass(chars, 7);
         try{
             labelUpdateStatus.setText(fpm.isSecAnswer(username));
@@ -75,8 +75,7 @@ public class ChangePasswordController implements Initializable {
             }else{
                 labelUpdateStatus.setText("Error");
             }
-
-        }catch (Exception e){
+        }catch (SQLException e){
             e.printStackTrace();
         }
     }

@@ -26,7 +26,7 @@ public class EmployeeManageBookingModel {
         String ret = "";
         int i = 1;
 
-        String query = "select seatNum, date, status from booking where username = ?";
+        String query = "select seatNum, date, timestamp from booking where username = ?";
         try {
 
             preparedStatement = connection.prepareStatement(query);
@@ -35,7 +35,7 @@ public class EmployeeManageBookingModel {
             resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
                 for (i = 1; i <= 3; i++){
-                    ret += resultSet.getString(i) + "   ";
+                    ret += resultSet.getString(i) + "    |   ";
                 }
             }
         } catch (Exception e) {

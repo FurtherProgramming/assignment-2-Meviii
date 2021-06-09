@@ -6,7 +6,7 @@
 
 <AnchorPane prefHeight="394.0" prefWidth="360.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.controller.EmployeeManageAccountController">
     <children>
-        <Label layoutX="114.0" layoutY="4.0" prefHeight="147.0" prefWidth="179.0" text="    Account Management" wrapText="true">
+        <Label layoutX="91.0" layoutY="14.0" prefHeight="147.0" prefWidth="179.0" text="MANAGE ACCOUNT" textAlignment="CENTER" wrapText="true">
             <font>
                 <Font name="System Bold" size="22.0" />
             </font>

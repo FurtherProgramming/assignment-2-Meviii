@@ -23,30 +23,35 @@ public class AdminDeleteEmployeeController{
 
     @FXML
     private Button btnDeleteEmployeeToEmpManagement;
-    public void DeleteEmployeeToEmpManagement(ActionEvent event) throws IOException {
+    public void DeleteEmployeeToEmpManagement(ActionEvent event) {
 
-        FXMLLoader loader = new FXMLLoader();
-        String address = "src/main/ui/adminManageEmployee.fxml";
-        InputStream fxmlStream = new FileInputStream(address);
-        Parent root = loader.load(fxmlStream);
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            String address = "src/main/ui/adminManageEmployee.fxml";
+            InputStream fxmlStream = new FileInputStream(address);
+            Parent root = loader.load(fxmlStream);
 
-        Stage stage = (Stage) btnDeleteEmployeeToEmpManagement.getScene().getWindow();
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-
+            Stage stage = (Stage) btnDeleteEmployeeToEmpManagement.getScene().getWindow();
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
+
     @FXML
     private TextField txtUsername;
     @FXML
     private Label lblStatus;
-    public void Delete(ActionEvent event) throws SQLException {
+    public void Delete(ActionEvent event){
         try {
-
             if (ade.isCheckUser(txtUsername.getText())) {
                 ade.isDeleteUser(txtUsername.getText());
                 lblStatus.setText("Deleted");
+            }else if (!ade.isCheckUser(txtUsername.getText())){
+                lblStatus.setText("No User");
             }else{
-                lblStatus.setText("Not found");
+                lblStatus.setText("Error");
             }
         }catch (SQLException e){
             e.printStackTrace();

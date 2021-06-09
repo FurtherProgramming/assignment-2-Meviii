@@ -20,35 +20,46 @@ public class AdminGenerateReportsController {
     @FXML
     private Button btnAdminReportToGenBooking;
     public void AdminReportToGenBooking(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader();
-        String address = "src/main/ui/adminGenerateBooking.fxml";
-        InputStream fxmlStream = new FileInputStream(address);
-        Parent root = loader.load(fxmlStream);
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            String address = "src/main/ui/adminGenerateBooking.fxml";
+            InputStream fxmlStream = new FileInputStream(address);
+            Parent root = loader.load(fxmlStream);
 
 
-        Stage stage = (Stage) btnAdminReportToGenBooking.getScene().getWindow();
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
+            Stage stage = (Stage) btnAdminReportToGenBooking.getScene().getWindow();
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 
     @FXML
     private Button btnReportToAdminPanel;
     public void ReportToAdminPanel(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader();
-        String address = "src/main/ui/adminPanel.fxml";
-        InputStream fxmlStream = new FileInputStream(address);
-        Parent root = loader.load(fxmlStream);
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            String address = "src/main/ui/adminPanel.fxml";
+            InputStream fxmlStream = new FileInputStream(address);
+            Parent root = loader.load(fxmlStream);
 
-
-        Stage stage = (Stage) btnReportToAdminPanel.getScene().getWindow();
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
+            Stage stage = (Stage) btnReportToAdminPanel.getScene().getWindow();
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 
     @FXML
     private Label lblIfGenerated;
     public void AdminReportToGenEmployee(ActionEvent event) throws IOException {
-        age.isEmployeeInfo();
-        lblIfGenerated.setText("Generated!");
+        try {
+            age.isEmployeeInfo();
+            lblIfGenerated.setText("Generated!");
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 }
