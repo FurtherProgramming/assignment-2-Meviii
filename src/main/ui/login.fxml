@@ -9,15 +9,15 @@
             <Label fx:id="isConnected" layoutX="23.0" layoutY="356.0" text="Status">
 
             </Label>
-      <TextField fx:id="txtUsername" layoutX="108.0" layoutY="198.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="138.0" promptText="USERNAME" AnchorPane.bottomAnchor="176.0" AnchorPane.leftAnchor="111.0" AnchorPane.rightAnchor="111.0" AnchorPane.topAnchor="202.0" />
-      <PasswordField fx:id="txtPassword" layoutX="108.0" layoutY="235.0" prefHeight="25.0" prefWidth="138.0" promptText="PASSWORD" AnchorPane.bottomAnchor="133.0" AnchorPane.leftAnchor="111.0" AnchorPane.rightAnchor="111.0" AnchorPane.topAnchor="245.0" />
-      <Button fx:id="mainLogin" defaultButton="true" layoutX="189.0" layoutY="284.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#Login" prefHeight="25.0" prefWidth="60.0" text="Login" textAlignment="CENTER" AnchorPane.bottomAnchor="94.0" AnchorPane.leftAnchor="189.0" AnchorPane.rightAnchor="111.0" AnchorPane.topAnchor="284.0" />
-      <Label layoutX="92.0" layoutY="52.0" prefHeight="150.0" prefWidth="189.0" text="ARUB EMPLOYEE &#10;PANEL" textAlignment="CENTER" textOverrun="CLIP">
+      <TextField fx:id="txtUsername" layoutX="110.0" layoutY="195.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="138.0" promptText="USERNAME" AnchorPane.bottomAnchor="183.0" AnchorPane.leftAnchor="110.0" AnchorPane.rightAnchor="112.0" AnchorPane.topAnchor="195.0" />
+      <PasswordField fx:id="txtPassword" layoutX="110.0" layoutY="238.0" prefHeight="25.0" prefWidth="138.0" promptText="PASSWORD" AnchorPane.bottomAnchor="140.0" AnchorPane.leftAnchor="110.0" AnchorPane.rightAnchor="112.0" AnchorPane.topAnchor="238.0" />
+      <Button fx:id="mainLogin" defaultButton="true" layoutX="188.0" layoutY="277.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#Login" prefHeight="25.0" prefWidth="60.0" text="Login" textAlignment="CENTER" AnchorPane.bottomAnchor="101.0" AnchorPane.leftAnchor="188.0" AnchorPane.rightAnchor="112.0" AnchorPane.topAnchor="277.0" />
+      <Label layoutX="86.0" layoutY="37.0" prefHeight="150.0" prefWidth="189.0" text="ARUB EMPLOYEE &#10;PANEL" textAlignment="CENTER" textOverrun="CLIP">
          <font>
             <Font name="System Bold" size="22.0" />
          </font>
       </Label>
-      <Button layoutX="112.0" layoutY="284.0" mnemonicParsing="false" onAction="#Register" text="Register" />
+      <Button layoutX="111.0" layoutY="277.0" mnemonicParsing="false" onAction="#Register" text="Register" />
       <Button fx:id="btnAdminPanel" layoutX="2.0" layoutY="2.0" mnemonicParsing="false" onAction="#ChangeToAdminPanel" text="Admin Login" />
       <Button layoutX="235.0" layoutY="358.0" mnemonicParsing="false" onAction="#ForgotPassword" text="Forgot Password?" />
 

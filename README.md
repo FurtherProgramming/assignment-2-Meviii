@@ -37,20 +37,12 @@ EMPLOYEE BOOKING:
 
 ![img_4.png](img_4.png)
 
-Bugs:
+Bugs & Problems:
+
 - When locking down a seat, the first seat that gets locked down
 functions correctly and becomes locked however when entering a new
   seat to lock on the same scene, it adds the first seats boolean from
   1 -> 2.
-
-
-
-
-### References and tutorials for Readme (Markdown)
-- **IntelliJ IDEA MarkDown guide**. jetbrains.com/help/idea/markdown.html
-- **Choose an open source license**. Github. Available at: https://choosealicense.com/
-- **Getting started with writing and formatting on Github**. Github. Available at: https://help.github.com/articles/getting-started-with-writing-and-formatting-on-github/
-- **Markdown here cheatsheet**. Markdown Here Wiki. Available at: https://github.com/adam-p/markdown-here/wiki/Markdown-Here-Cheatsheet
-- **Markdown quick reference**. Wordpress. Available at: https://en.support.wordpress.com/markdown-quick-reference/
-- **readme-template**. Dan Bader. Github. Available at: https://github.com/dbader/readme-template
-- Writing READMEs. **Udacity**. Available at: https://classroom.udacity.com/courses/ud777/
+- Couldn't implement the visual booking method.
+- Tableview was not used.
+- Booking does not automatically cancel after certain time.
