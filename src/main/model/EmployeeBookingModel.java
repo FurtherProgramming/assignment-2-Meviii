@@ -45,7 +45,7 @@ public class EmployeeBookingModel {
     public Boolean isBookingNotNull(int seatNum) throws SQLException{
         PreparedStatement preparedStatement = null;
         ResultSet resultSet=null;
-        String query = "select * from booking where status is not null and seatNum = ?";
+        String query = "select * from booking where status = 'vacant' and seatNum = ?";
         try {
 
             preparedStatement = connection.prepareStatement(query);
@@ -132,6 +132,31 @@ public class EmployeeBookingModel {
             resultSet = preparedStatement.executeQuery();
             if (resultSet.next()) {
                 return resultSet.getString("seatNum");
+            }
+            else{
+                return null;
+            }
+        }
+        catch (Exception e)
+        {
+            return null;
+        }finally {
+            preparedStatement.close();
+            resultSet.close();
+        }
+    }
+    public String isPrevSeat(String user) throws SQLException{
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet=null;
+        String query = "select prev_seat from employee where username = ?";
+        try {
+
+            preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setString(1, user);
+
+            resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()) {
+                return resultSet.getString("prev_seat");
             }
             else{
                 return null;

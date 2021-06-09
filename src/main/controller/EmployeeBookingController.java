@@ -50,17 +50,25 @@ public class EmployeeBookingController {
     private Label labelBookingStatus2;
     public void BookingBook(ActionEvent event) throws SQLException{
         try{
+            // Check Booking
+            // Check Prev seat == new Seat
+            // if so, error
 
             if (ebm.checkBooking(username)) {
-                labelBookingStatus.setText("Already Booked");
+                labelBookingStatus.setText("");
+                labelBookingStatus2.setText("Already Booked");
             }else if (ebm.isCheckUser(username)) {
                     if (!txtBookingDate.getText().isEmpty() && !txtSeatNum.getText().isEmpty()) {
-                        if (ebm.isBookingNotNull(Integer.parseInt(txtSeatNum.getText()))){
+                        if (!ebm.isBookingNotNull(Integer.parseInt(txtSeatNum.getText()))){
                             labelBookingStatus.setText("Not Vacant");
-                        }else {
+                        }else if (!(txtSeatNum.getText().equals(ebm.isPrevSeat(username)))){
                             ebm.isBooking(txtBookingDate.getText(), username, "Awaiting Confirmation", Integer.parseInt(txtSeatNum.getText()));
                             labelBookingStatus.setText("SeatNum: " + ebm.isSeatNum(username));
                             labelBookingStatus2.setText("Awaiting Confirmation");
+                        }else if (txtSeatNum.getText().equals(ebm.isPrevSeat(username))){
+                            labelBookingStatus2.setText("Can't book same seat.");
+                        }else{
+                            labelBookingStatus2.setText("error");
                         }
                     } else {
                         labelBookingStatus.setText("Incorrect Details");

@@ -42,6 +42,9 @@ public class AdminWhitelistController implements Initializable {
     public void Whitelist(ActionEvent event) throws IOException{
         //checkuser
         //changewhitelist(for rebooking same seat)
+        if (awm.isCheckUser(txtUsername().getText)){
+
+        }
 
     }
 }
